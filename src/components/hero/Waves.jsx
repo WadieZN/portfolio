@@ -22,6 +22,9 @@ function Waves() {
       document
         .querySelector(".middle-wave")
         ?.setAttribute("style", `transform: translateY(${scrollY * 0.1}px);`);
+      document
+        .querySelector(".hero-content")
+        ?.setAttribute("style", `transform: translateY(-${scrollY * 0.25}px);`);
     };
 
     window.addEventListener("scroll", handleParallax);

@@ -1,6 +1,5 @@
 // components/home/HeroContent.js
 import React, { useRef, useEffect } from "react";
-import arrow from "../../assets/img/arrow-down.png";
 
 function HeroContent({ items }) {
   const trackRef = useRef(null);
@@ -42,14 +41,11 @@ function HeroContent({ items }) {
 
   return (
     <div className="hero-content">
-      <h2 style={{ zIndex: 4, position: "relative" }}>Wadie</h2>
+      <h2>Wadie</h2>
       <div className="infinite-scroll" ref={containerRef}>
         <div className="scroll-track" ref={trackRef}></div>
       </div>
-      <h2 style={{ zIndex: 4, position: "relative" }}>Zaanoune</h2>
-      <a href="#about" id="scroll-down">
-        <img src={arrow} alt="Scroll down" />
-      </a>
+      <h2>Zaanoune</h2>
     </div>
   );
 }

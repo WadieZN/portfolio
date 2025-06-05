@@ -4,9 +4,10 @@ import Hero from "./components/hero/Hero";
 import sun from "./assets/img/sun.svg";
 import moon from "./assets/img/moon.svg";
 import About from "./components/About";
-import Projects from "./components/projects/Projects";
+import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Career from "./components/Career";
+import arrow from "./assets/img/arrow-down.png";
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(() => {
@@ -47,6 +48,9 @@ function App() {
           />
         </div>
       </button>
+      <a href="#about" id="scroll-down">
+        <img src={arrow} alt="Scroll down" />
+      </a>
       <Hero />
       <main>
         <About />

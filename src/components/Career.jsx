@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import knight from "./../assets/img/knight.png";
 import star from "./../assets/img/star.svg";
+import NomadKnight from "./NomadKnight";
 
 const Careers = () => {
   const timelineData = [
@@ -13,7 +13,7 @@ const Careers = () => {
     },
     {
       id: 2,
-      title: "Gap Year",
+      title: "Post High School",
       date: "2020 - 2021",
       description:
         "Focused on personal growth through reading and life learning.",
@@ -28,9 +28,9 @@ const Careers = () => {
     {
       id: 4,
       title: "First Job",
-      date: "June 2022",
+      date: "June 2022 - January 2025",
       description:
-        "Worked as an Administrative Assistant at the Court of First Instance which lasted two and a half years.",
+        "Worked as an Administrative Assistant at the Court of First Instance.",
     },
     {
       id: 5,
@@ -44,7 +44,7 @@ const Careers = () => {
       title: "Web Development Internship",
       date: "May 2024 - September 2024",
       description:
-        "Completed a 4-month internship at a Canada-based international company.",
+        "Completed a 4-month internship at an international company as a Front-End Developer.",
     },
     {
       id: 7,
@@ -57,7 +57,7 @@ const Careers = () => {
 
   const containerRef = useRef(null);
   const fillRef = useRef(null);
-  const dotRefs = useRef([]); // array of refs
+  const dotRefs = useRef([]); 
 
   const [activeItems, setActiveItems] = useState([]);
 
@@ -92,7 +92,7 @@ const Careers = () => {
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll(); // Initial run
+    handleScroll(); 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -100,22 +100,7 @@ const Careers = () => {
     <section className="careers-section">
       <h2 className="subtitle">﴾ Career ﴿</h2>
 
-      <div className="career-description">
-        <div>
-          <img src={star} alt="Moroccan star icon" />
-          <p>
-            Like many, my journey started with school, but my real passion for
-            web development began after the classroom. Driven by curiosity and
-            the desire to create, I taught myself, built many projects, and kept
-            learning day by day. Coming from Morocco, I carry with me a mix of
-            tradition and creativity, which reflects in the way I design and
-            build. Along the way, I gained experience working with people from
-            different parts of the world, growing not just as a developer, but
-            as a person. Each step in my journey has its own story.
-          </p>
-        </div>
-        <img src={knight} alt="Knight image" id="knight" />
-      </div>
+      <h3 className="timeline-title">A timeline that represents my journey</h3>
 
       <div className="timeline-container" ref={containerRef}>
         <div className="timeline">
@@ -171,6 +156,22 @@ const Careers = () => {
             ))}
           </div>
         </div>
+      </div>
+
+      <div className="career-description">
+        <div>
+          <img src={star} alt="Moroccan star icon" />
+          <p>
+            Like many, my journey started with school, but my real passion for
+            web development began after the classroom. Driven by curiosity and
+            the desire to create, I taught myself, built many projects, and kept
+            learning day by day. Coming from Morocco, I carry with me a mix of
+            tradition and creativity. Along the way, I gained experience working
+            with people from different parts of the world, growing not just as a
+            developer, but as a person.
+          </p>
+        </div>
+        <NomadKnight />
       </div>
     </section>
   );
