@@ -285,6 +285,7 @@ button {
         gap: 35px;
         margin-top: 50px;
         padding: 10px;
+        overflow: hidden;
 
         div {
             @include flex-column-center;
@@ -1057,6 +1058,8 @@ footer {
     }
 
     #projects {
+        max-width: 100%;
+
         .projects-container {
             display: flex;
             justify-content: center;
@@ -1144,6 +1147,7 @@ footer {
 
     .infinite-scroll {
         width: 100% !important;
+        max-width: 100%;
         border-width: 4px;
         padding: 12px;
 
@@ -1165,6 +1169,16 @@ footer {
         form {
             width: 100%;
             max-width: 100%;
+        }
+
+        .link-circle {
+            width: 80px;
+            height: 80px;
+            margin: 25px;
+
+            img {
+                width: 30px;
+            }
         }
     }
 
