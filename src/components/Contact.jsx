@@ -52,7 +52,7 @@ function Contact() {
           </a>
           <div>
             <a
-              href="https://instagram.com/yourhandle"
+              href="https://www.linkedin.com/in/wadie-zaanoune/"
               target="_blank"
               rel="noreferrer"
               className="link-circle"
@@ -60,7 +60,7 @@ function Contact() {
               <img src={linkedin} alt="Linkedin" />
             </a>
             <a
-              href="https://github.com/yourhandle"
+              href="https://www.instagram.com/wadyzen/"
               target="_blank"
               rel="noreferrer"
               className="link-circle"
@@ -68,7 +68,7 @@ function Contact() {
               <img src={instagram} alt="Instagram" />
             </a>
             <a
-              href="https://github.com/yourhandle"
+              href="https://github.com/WadieZN"
               target="_blank"
               rel="noreferrer"
               className="link-circle"
