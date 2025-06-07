@@ -44,7 +44,7 @@ const Careers = () => {
       title: "Web Development Internship",
       date: "May 2024 - September 2024",
       description:
-        "Completed a 4-month internship at an international company as a Front-End Developer.",
+        "Completed a 4-month internship at an international company.",
     },
     {
       id: 7,

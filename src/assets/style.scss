@@ -832,6 +832,24 @@ form {
     }
 }
 
+.contact-thankyou {
+    background: var(--secondary-color);
+    color: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    @include flex-column-center();
+    margin: 35px 0;
+
+    h4 {
+        font-size: 1.75rem;
+        color: var(--accent-color);
+        margin-bottom: 10px;
+    }
+
+    p{
+    color: var(--text-color);}
+}
+
 // Footer
 
 footer {
@@ -1125,32 +1143,6 @@ footer {
     }
 }
 
-@media (max-width: 600px) {
-    .project::before {
-        display: none;
-    }
-
-    .modal-content {
-        flex-direction: column;
-        padding: 15px;
-    }
-
-    .modal-media,
-    .modal-details {
-        margin-right: 0;
-        min-width: 100%;
-    }
-
-    .nomad-knight {
-        min-width: 100%;
-    }
-
-    .contact-info h3 {
-        font-size: 2.2rem;
-    }
-}
-
-
 @media screen and (max-width: 768px) {
     .subtitle {
         font-size: 2rem;
@@ -1158,6 +1150,12 @@ footer {
         span {
             padding: 5px;
         }
+    }
+
+    .mode-toggle {
+        top: 20px;
+        right: 20px;
+        width: 50px;
     }
 
     .hero h2 {
@@ -1217,5 +1215,48 @@ footer {
 
     .nomads_image {
         min-width: 300%;
+    }
+}
+
+@media (max-width: 600px) {
+    .project::before {
+        display: none;
+    }
+
+    .modal-content {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .modal-media,
+    .modal-details {
+        margin-right: 0;
+        min-width: 100%;
+    }
+
+    .timeline-card-content {
+        min-width: 100%;
+    }
+
+    .timeline-side.left,
+    .timeline-side.right {
+        padding-left: 100px;
+    }
+
+    .timeline-card-content span {
+        font-size: 0.9rem;
+        margin: 5px 0;
+    }
+
+    .timeline-card-content p {
+        font-size: 1.05rem;
+    }
+
+    .nomad-knight {
+        min-width: 100%;
+    }
+
+    .contact-info h3 {
+        font-size: 2.2rem;
     }
 }
