@@ -101,6 +101,7 @@ button {
 }
 
 // Components
+
 .subtitle {
     font-family: var(--secondary-font);
     text-align: center;
@@ -351,6 +352,7 @@ button {
 
 .nomad-knight {
     transition: none;
+    min-width: 450px;
     width: 100%;
     margin: 0 25px;
     aspect-ratio: 1 / 1;
@@ -689,6 +691,8 @@ button {
 .contact-grid {
     @include flex-center();
     margin: 50px auto;
+    max-width: 100%;
+    width: 100%;
 }
 
 form {
@@ -751,6 +755,7 @@ form {
     text-align: center;
     margin: 0 50px;
     max-width: 540px;
+    width: 100%;
 
     h3 {
         font-family: var(--secondary-font);
@@ -774,6 +779,7 @@ form {
     div {
         @include flex-center();
         margin: 15px 0;
+        overflow: hidden;
     }
 
 }
@@ -1077,6 +1083,7 @@ footer {
                 text-align: center;
                 padding: 10px;
                 margin: 10px auto;
+                gap: 10px;
 
                 img {
                     width: 100%;
@@ -1119,6 +1126,10 @@ footer {
 }
 
 @media (max-width: 600px) {
+    .project::before {
+        display: none;
+    }
+
     .modal-content {
         flex-direction: column;
         padding: 15px;
@@ -1128,6 +1139,14 @@ footer {
     .modal-details {
         margin-right: 0;
         min-width: 100%;
+    }
+
+    .nomad-knight {
+        min-width: 100%;
+    }
+
+    .contact-info h3 {
+        font-size: 2.2rem;
     }
 }
 
@@ -1161,6 +1180,20 @@ footer {
         }
     }
 
+    #projects {
+        .projects-container {
+            .project {
+                background: var(--back-wave);
+                border-radius: 10px;
+
+                h3 {
+                    font-size: 1.6rem;
+                    margin-bottom: 15px;
+                }
+            }
+        }
+    }
+
     .contact-grid {
         padding: 10px;
     }
@@ -1168,13 +1201,13 @@ footer {
     #contact {
         form {
             width: 100%;
-            max-width: 100%;
+            max-width: 450px;
         }
 
         .link-circle {
             width: 80px;
             height: 80px;
-            margin: 25px;
+            margin: 15px;
 
             img {
                 width: 30px;
@@ -1182,9 +1215,7 @@ footer {
         }
     }
 
-    .footer-img img {
-        width: auto;
-        height: 100px;
-        margin-bottom: -90px;
+    .nomads_image {
+        min-width: 300%;
     }
 }

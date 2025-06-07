@@ -49,7 +49,6 @@ function NomadKnight() {
       className="nomad-knight"
       ref={containerRef}
       onMouseEnter={handleHover}
-      style={{ width: "450px", height: "450px" }}
     />
   );
 }

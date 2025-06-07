@@ -40,7 +40,7 @@ function Footer() {
         <div
           className="nomads_image desktop"
           ref={container}
-          style={{ width: "100%", height: "200px" }}
+          style={{ width: "100%" }}
         />
       </div>
 
