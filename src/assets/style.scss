@@ -846,8 +846,9 @@ form {
         margin-bottom: 10px;
     }
 
-    p{
-    color: var(--text-color);}
+    p {
+        color: var(--text-color);
+    }
 }
 
 // Footer
@@ -1063,7 +1064,7 @@ footer {
         margin-top: 100px;
 
         div {
-
+            max-width: 600px;
             margin: 50px 0 0 0;
 
             p {
@@ -1095,12 +1096,12 @@ footer {
 
             .project,
             .project:nth-child(2n) {
-                width: 450px;
-                max-width: 100%;
+                width: 100%;
+                max-width: 700px;
                 flex-direction: column;
                 text-align: center;
                 padding: 10px;
-                margin: 10px auto;
+                margin: 20px auto;
                 gap: 10px;
 
                 img {
@@ -1176,6 +1177,11 @@ footer {
             font-size: .9rem !important;
             margin: 0 1.4rem !important;
         }
+    }
+
+    .timeline-title {
+        font-size: 1.75rem;
+        margin: 30px 0 100px 0;
     }
 
     #projects {
