@@ -1,5 +1,7 @@
 import ProjectLinks from "./ProjectLinks";
 
+import React from "react";
+
 import project1 from "../assets/img/project1.png";
 import project2 from "../assets/img/project2.png";
 import project3 from "../assets/img/project3.png";
@@ -76,10 +78,10 @@ function Projects() {
               <h3>{project.name}</h3>
               <ul className="project-stack">
                 {project.stack.map((tech, i) => (
-                  <>
-                    <li key={i}>{tech}</li>
+                  <React.Fragment key={i}>
+                    <li>{tech}</li>
                     {i < project.stack.length - 1 && <span>&#9737;</span>}
-                  </>
+                  </React.Fragment>
                 ))}
               </ul>
               <p>{project.text}</p>

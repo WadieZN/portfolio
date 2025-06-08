@@ -10,11 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@tsparticles/engine": "^3.8.1",
-    "@tsparticles/react": "^3.0.0",
-    "@tsparticles/slim": "^3.8.1",
     "framer-motion": "^12.15.0",
-    "lottie-react": "^2.4.1",
     "lottie-web": "^5.13.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
