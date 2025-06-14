@@ -45,7 +45,7 @@ function Footer() {
       </div>
 
       <footer>
-        <span>wadyzen &copy; {new Date().getFullYear()}</span>
+        <span>WadyZen &copy; {new Date().getFullYear()}</span>
       </footer>
     </>
   );

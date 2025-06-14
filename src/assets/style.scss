@@ -310,7 +310,7 @@ button {
             }
 
             p {
-                font-size: 1.3rem;
+                font-size: 1.25rem;
                 line-height: 2.4rem;
             }
         }
@@ -985,6 +985,10 @@ footer {
 
 @media screen and (max-width: 1300px) {
 
+    #projects .projects-container {
+        overflow: hidden;
+    }
+
     .careers-section {
         overflow: hidden;
     }
@@ -1035,6 +1039,22 @@ footer {
 @media screen and (max-width: 1024px) {
     .hero h2 {
         font-size: 6.5rem;
+    }
+
+    .infinite-scroll {
+        width: 100% !important;
+        max-width: 100%;
+        border-width: 4px;
+        padding: 12px;
+
+        .scroll-track {
+            animation: scroll-left 10s linear infinite;
+        }
+
+        .scroll-item {
+            font-size: .9rem !important;
+            margin: 0 1.4rem !important;
+        }
     }
 
     #about {
@@ -1102,6 +1122,7 @@ footer {
             max-width: 100%;
             margin: 0;
             gap: 0;
+            overflow: visible;
 
             .project,
             .project:nth-child(2n) {
@@ -1162,6 +1183,10 @@ footer {
         }
     }
 
+    #about .about-container div p {
+        font-size: 1.15rem;
+    }
+
     .mode-toggle {
         top: 20px;
         right: 20px;
@@ -1172,25 +1197,13 @@ footer {
         font-size: 15vw;
     }
 
-    .infinite-scroll {
-        width: 100% !important;
-        max-width: 100%;
-        border-width: 4px;
-        padding: 12px;
-
-        .scroll-track {
-            animation: scroll-left 10s linear infinite;
-        }
-
-        .scroll-item {
-            font-size: .9rem !important;
-            margin: 0 1.4rem !important;
-        }
-    }
-
     .timeline-title {
         font-size: 1.75rem;
         margin: 30px 0 100px 0;
+    }
+
+    .project::before {
+        display: none;
     }
 
     #projects {
@@ -1238,9 +1251,6 @@ footer {
 }
 
 @media (max-width: 600px) {
-    .project::before {
-        display: none;
-    }
 
     .modal-content {
         flex-direction: column;
@@ -1260,6 +1270,12 @@ footer {
     .timeline-side.left,
     .timeline-side.right {
         padding-left: 100px;
+    }
+
+
+    .timeline-card {
+        padding-left: 15px;
+        min-width: 85px;
     }
 
     .timeline-card-content h3 {

@@ -42,7 +42,7 @@ const Careers = () => {
     {
       id: 6,
       title: "Web Development Internship",
-      date: "May 2024 - September 2024",
+      date: "May 2024",
       description:
         "Completed a 4-month internship at an international company.",
     },
@@ -57,7 +57,7 @@ const Careers = () => {
 
   const containerRef = useRef(null);
   const fillRef = useRef(null);
-  const dotRefs = useRef([]); 
+  const dotRefs = useRef([]);
 
   const [activeItems, setActiveItems] = useState([]);
 
@@ -92,7 +92,7 @@ const Careers = () => {
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll(); 
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -165,10 +165,12 @@ const Careers = () => {
             Like many, my journey started with school, but my real passion for
             web development began after the classroom. Driven by curiosity and
             the desire to create, I taught myself, built many projects, and kept
-            learning day by day. Coming from Morocco, I carry with me a mix of
-            tradition and creativity. Along the way, I gained experience working
-            with people from different parts of the world, growing not just as a
-            developer, but as a person.
+            learning day by day. Coming from Morocco, I bring a unique blend of
+            tradition and innovation to my work. Along the way, collaborating
+            with talented minds across the globe has not only sharpened my
+            technical skills but also deepened my perspective, shaping me into
+            both a better developer and a more adaptable, open-minded
+            individual.
           </p>
         </div>
         <NomadKnight />
