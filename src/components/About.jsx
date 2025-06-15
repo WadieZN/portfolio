@@ -36,15 +36,15 @@ function About() {
         <div>
           <h3>A Moroccan Developer</h3>
           <p>
-            I'm a web developer with a passion for creating visually
-            stunning and highly functional websites. My journey in digital
-            design and development has equipped me with a keen eye for
-            aesthetics, a love for clean code, and a dedication to crafting
-            seamless user experiences. Whether it's front-end development, UI/UX
-            design, or digital branding, I thrive on transforming ideas into
-            interactive, pixel-perfect realities. With a blend of creativity and
-            technical expertise, I aim to build websites that not only look
-            great but also perform flawlessly across all devices.
+            I’m a web developer who loves building websites that look amazing
+            and work smoothly. Since diving into this world, I’ve developed a sharp eye for
+            design, a knack for clean code, and a real obsession with making
+            sure users have the best experience possible. Whether it’s front-end
+            development, UI/UX design, or digital branding, I get excited about
+            turning ideas into polished, fully functional sites. For me, it’s
+            all about mixing creativity with technical skill, <em>so that</em>{" "}
+            the end result isn’t just beautiful, but also fast, responsive, and
+            easy to use.
           </p>
         </div>
       </div>

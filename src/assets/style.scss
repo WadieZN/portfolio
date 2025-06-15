@@ -14,6 +14,7 @@
 :root {
     --primary-font: "Sansation", sans-serif;
     --secondary-font: "Kurale", serif;
+    --paragraph-font: "Poppins", sans-serif;
 
     --primary-color: #2a4d69;
     --secondary-color: #d97b66;
@@ -306,12 +307,14 @@ button {
                 font-family: var(--secondary-font);
                 font-size: 3rem;
                 font-weight: 600;
-                margin-bottom: 35px;
+                margin-bottom: 25px;
             }
 
             p {
-                font-size: 1.25rem;
-                line-height: 2.4rem;
+                font-family: var(--paragraph-font);
+                font-size: 1.2rem;
+                letter-spacing: 0.5px;
+                line-height: 2.3rem;
             }
         }
 
@@ -345,9 +348,11 @@ button {
         margin: 0 25px;
 
         p {
+            font-family: var(--paragraph-font);
             text-align: center;
             line-height: 2rem;
-            font-size: 1.2rem;
+            letter-spacing: 0.5px;
+            font-size: 1.1rem;
         }
 
         img {
@@ -555,7 +560,7 @@ button {
         @include flex-column-center();
         gap: 40px;
         margin-bottom: 80px;
-        padding: 10px;
+        padding: 25px 10px;
     }
 }
 
@@ -579,13 +584,18 @@ button {
         }
     }
 
-    &:hover {
+    &.active,
+    &:nth-child(even).active {
         box-shadow: var(--shadow);
-        transform: translateY(-5px);
+        transform: translateY(-5px) scale(1.02);
         background: var(--back-wave);
 
         img {
             filter: none;
+        }
+
+        &::before {
+            transform: translateX(-20px);
         }
     }
 
@@ -600,7 +610,7 @@ button {
         border-image: url('./img/zellige.jpg') 30 round;
         pointer-events: none;
         opacity: 0.3;
-        animation: float-border 10s infinite linear;
+        transition: 400ms ease-in-out;
     }
 
     img {
@@ -636,7 +646,9 @@ button {
         }
 
         p {
-            font-size: 1.1rem;
+            font-family: var(--paragraph-font);
+            font-size: 1.05rem;
+            letter-spacing: 0.5px;
             line-height: 1.75rem;
         }
 
@@ -745,9 +757,9 @@ form {
         padding: 15px 20px;
         background: #000;
         color: #fff;
+        border-radius: 10px;
         font-size: 1rem;
         font-weight: 600;
-        border-radius: 10px;
         margin-top: 45px;
 
         &:hover {

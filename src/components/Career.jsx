@@ -162,15 +162,14 @@ const Careers = () => {
         <div>
           <img src={star} alt="Moroccan star icon" />
           <p>
-            Like many, my journey started with school, but my real passion for
-            web development began after the classroom. Driven by curiosity and
-            the desire to create, I taught myself, built many projects, and kept
-            learning day by day. Coming from Morocco, I bring a unique blend of
-            tradition and innovation to my work. Along the way, collaborating
-            with talented minds across the globe has not only sharpened my
-            technical skills but also deepened my perspective, shaping me into
-            both a better developer and a more adaptable, open-minded
-            individual.
+            My journey into web development didn’t really start in a
+            classroom. It began when I decided to teach myself. I’ve always been
+            curious about how things work, and <em>that</em> will to create pushed me to
+            build projects, make mistakes, and keep learning. And
+            along the way, I’ve been lucky to collaborate with amazing people
+            from all over the world. Those experiences haven’t just made me a
+            better developer, <em>but</em> they’ve also taught me to stay open, adapt, and see
+            things from different perspectives.
           </p>
         </div>
         <NomadKnight />
