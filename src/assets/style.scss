@@ -166,15 +166,6 @@ button {
     }
 }
 
-#tsparticles {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 99;
-}
-
 .hero-content {
     position: fixed;
     z-index: 3;
@@ -242,7 +233,7 @@ button {
 }
 
 .waves {
-    position: absolute;
+    position: relative;
     bottom: 0;
     width: 100%;
     height: 100%;
@@ -641,7 +632,7 @@ button {
             font-size: 1.2rem;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin: 20px 0 10px 0;
+            margin: 15px 0 5px 0;
             color: var(--primary-color);
         }
 
@@ -751,20 +742,59 @@ form {
     }
 
     button {
-        font-family: var(--secondary-font);
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        padding: 15px 20px;
+        position: relative;
         background: #000;
-        color: #fff;
-        border-radius: 10px;
-        font-size: 1rem;
+        text-align: center;
+        line-height: 50px;
+        letter-spacing: 2px;
         font-weight: 600;
-        margin-top: 45px;
+        color: #fff;
+        font-size: 20px;
+        font-family: var(--secondary-font);
+        z-index: 3;
+        margin-top: 25px;
+        padding: 0 15px;
+    }
 
-        &:hover {
-            box-shadow: 0 0 15px var(--secondary-color);
-        }
+    button::before,
+    button::after,
+    span::before,
+    span::after {
+        content: '';
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background: #e4dacb;
+        transition: 1s;
+        mix-blend-mode: hue;
+    }
+
+    button::before {
+        top: -3px;
+        left: -3px
+    }
+
+    button::after {
+        top: -3px;
+        right: -3px;
+    }
+
+    span::before {
+        bottom: -3px;
+        left: -3px
+    }
+
+    span::after {
+        bottom: -3px;
+        right: -3px
+    }
+
+    button:hover::before,
+    button:hover::after,
+    button:hover span::before,
+    button:hover span::after {
+        width: calc(175px/2);
+        height: calc(45px/2)
     }
 }
 

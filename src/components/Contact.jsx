@@ -102,7 +102,7 @@ function Contact() {
               required
             ></textarea>
             <button type="submit" className="submit-button">
-              Send Message
+              <span>Send Message</span>
             </button>
           </form>
         )}

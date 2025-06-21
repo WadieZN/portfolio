@@ -7,8 +7,11 @@ import About from "./components/About";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Career from "./components/Career";
+import { useGoogleAnalytics } from "./analytics"; 
 
 function App() {
+    useGoogleAnalytics();
+
   const [isDarkMode, setIsDarkMode] = useState(() => {
     return localStorage.getItem("darkMode") === "true";
   });
