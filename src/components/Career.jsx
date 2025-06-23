@@ -1,59 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import star from "./../assets/img/star.svg";
 import NomadKnight from "./NomadKnight";
+import { useTranslation } from "react-i18next";
 
 const Careers = () => {
-  const timelineData = [
-    {
-      id: 1,
-      title: "High School",
-      date: "2017 - 2020",
-      description:
-        "Completed secondary education with a focus on general studies.",
-    },
-    {
-      id: 2,
-      title: "Post High School",
-      date: "2020 - 2021",
-      description:
-        "Focused on personal growth through reading and life learning.",
-    },
-    {
-      id: 3,
-      title: "IT Diploma",
-      date: "October 2021 - July 2023",
-      description:
-        "Pursued and obtained an IT Diploma with hands-on technical training.",
-    },
-    {
-      id: 4,
-      title: "First Job",
-      date: "June 2022 - January 2025",
-      description:
-        "Worked as an Administrative Assistant at the Court of First Instance.",
-    },
-    {
-      id: 5,
-      title: "Self Learning",
-      date: "2023 - 2024",
-      description:
-        "Dedicated one year to independently learning full stack web development.",
-    },
-    {
-      id: 6,
-      title: "Web Development Internship",
-      date: "May 2024",
-      description:
-        "Completed a 4-month internship at an international company.",
-    },
-    {
-      id: 7,
-      title: "Freelance Developer",
-      date: "2024 - Present",
-      description:
-        "Delivering web development solutions for clients worldwide.",
-    },
-  ];
+  const { t } = useTranslation();
+  const timelineData = t("career.timeline", { returnObjects: true });
 
   const containerRef = useRef(null);
   const fillRef = useRef(null);
@@ -98,9 +50,8 @@ const Careers = () => {
 
   return (
     <section className="careers-section">
-      <h2 className="subtitle">﴾ Career ﴿</h2>
-
-      <h3 className="timeline-title">A timeline that represents my journey</h3>
+      <h2 className="subtitle">{t("career.subtitle")}</h2>
+      <h3 className="timeline-title">{t("career.title")}</h3>
 
       <div className="timeline-container" ref={containerRef}>
         <div className="timeline">
@@ -161,16 +112,7 @@ const Careers = () => {
       <div className="career-description">
         <div>
           <img src={star} alt="Moroccan star icon" />
-          <p>
-            My journey into web development didn’t really start in a
-            classroom. It began when I decided to teach myself. I’ve always been
-            curious about how things work, and <em>that</em> will to create pushed me to
-            build projects, make mistakes, and keep learning. And
-            along the way, I’ve been lucky to collaborate with amazing people
-            from all over the world. Those experiences haven’t just made me a
-            better developer, <em>but</em> they’ve also taught me to stay open, adapt, and see
-            things from different perspectives.
-          </p>
+          <p>{t("career.description")}</p>
         </div>
         <NomadKnight />
       </div>

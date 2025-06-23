@@ -1,0 +1,151 @@
+{
+    "hero": {
+        "roles": [
+            "Web Developer",
+            "Designer",
+            "3D Artist",
+            "Frontend Developer",
+            "Creative Coder",
+            "UI/UX Specialist"
+        ]
+    },
+    "about": {
+        "subtitle": "﴾ About Me ﴿",
+        "title": "A Moroccan Developer",
+        "description": "I’m a web developer who loves building websites that look amazing and work smoothly. Since diving into this world, I’ve developed a sharp eye for design, a knack for clean code, and a real obsession with making sure users have the best experience possible. Whether it’s front-end development, UI/UX design, or digital branding, I get excited about turning ideas into polished, fully functional sites. For me, it’s all about mixing creativity with technical skill, so that the end result isn’t just beautiful, but also fast, responsive, and easy to use."
+    },
+    "career": {
+        "subtitle": "﴾ Career ﴿",
+        "title": "A timeline that represents my journey",
+        "timeline": [
+            {
+                "title": "High School",
+                "date": "2017 - 2020",
+                "description": "Completed secondary education with a focus on general studies."
+            },
+            {
+                "title": "Post High School",
+                "date": "2020 - 2021",
+                "description": "Focused on personal growth through reading and life learning."
+            },
+            {
+                "title": "IT Diploma",
+                "date": "2021 - July 2023",
+                "description": "Pursued and obtained an IT Diploma with hands-on technical training."
+            },
+            {
+                "title": "First Job",
+                "date": "2022 - January 2025",
+                "description": "Worked as an Administrative Assistant at the Court of First Instance."
+            },
+            {
+                "title": "Self Learning",
+                "date": "2023 - 2024",
+                "description": "Dedicated one year to independently learning full stack web development."
+            },
+            {
+                "title": "Web Dev Internship",
+                "date": "May 2024",
+                "description": "Completed a 4-month internship at an international company."
+            },
+            {
+                "title": "Freelance Developer",
+                "date": "2024 - Present",
+                "description": "Delivering web development solutions for clients worldwide."
+            }
+        ],
+        "description": "My journey into web development didn’t really start in a classroom. It began when I decided to teach myself. I’ve always been curious about how things work, and that will to create pushed me to build projects, make mistakes, and keep learning. And along the way, I’ve been lucky to collaborate with amazing people from all over the world. Those experiences haven’t just made me a better developer, but they’ve also taught me to stay open, adapt, and see things from different perspectives."
+    },
+    "projects": {
+        "subtitle": "﴾ Projects ﴿",
+        "linkTitle": "Links",
+        "list": [
+            {
+                "name": "Infinite Padel Courts",
+                "text": "Custom 3D configurator and redesign for a padel court construction company.",
+                "stack": [
+                    "WordPress",
+                    "Three.js",
+                    "JavaScript",
+                    "Elementor",
+                    "CSS3"
+                ],
+                "links": {
+                    "live": "https://infinitepadelcourts.com"
+                }
+            },
+            {
+                "name": "Car Rental Management System",
+                "text": "A full-featured platform for car rental businesses, including bookings, invoices, dashboards and more.",
+                "stack": [
+                    "React",
+                    "Express",
+                    "Node.js",
+                    "PostgreSQL"
+                ],
+                "links": {
+                    "text": "Not available due to privacy"
+                }
+            },
+            {
+                "name": "MH FITPRO",
+                "text": "A modern, responsive website for a company that builds gyms and wellness spaces.",
+                "stack": [
+                    "WordPress",
+                    "Elementor",
+                    "CSS3",
+                    "PHP"
+                ],
+                "links": {
+                    "live": "https://mhfitpro.net"
+                }
+            },
+            {
+                "name": "CineZen",
+                "text": "Discover and track your favorite movies and TV series with TMDb API integration.",
+                "stack": [
+                    "React",
+                    "JavaScript",
+                    "SCSS",
+                    "TMDb API"
+                ],
+                "links": {
+                    "github": "https://github.com/WadieZN/CineZen",
+                    "live": "https://cine-zen.netlify.app"
+                }
+            },
+            {
+                "name": "Memory Cards Game",
+                "text": "Responsive memory card game featuring anime characters. Great for all ages!",
+                "stack": [
+                    "React",
+                    "JavaScript",
+                    "SCSS",
+                    "Anilist API"
+                ],
+                "links": {
+                    "github": "https://github.com/WadieZN/Memory-Card",
+                    "live": "https://wadyzen-memory-game.netlify.app/"
+                }
+            }
+        ]
+    },
+    "contact": {
+        "title": "﴾ Contact ﴿",
+        "headline": "Let’s Build Something Great Together",
+        "description": "Have an idea you’d like to bring to life? I’m always open to exciting collaborations, creative challenges, or simple conversations.\nFill out the form or reach out directly, and I’ll get back to you as soon as possible.",
+        "stayInTouch": "Stay in Touch",
+        "email": "wadiezaanoune@gmail.com",
+        "thankYouTitle": "Thank you!",
+        "thankYouMessage": "Your message has been successfully sent.",
+        "form": {
+            "nameLabel": "Name",
+            "namePlaceholder": "Your name",
+            "emailLabel": "Email",
+            "emailPlaceholder": "Your email",
+            "messageLabel": "Message",
+            "messagePlaceholder": "Share your idea...",
+            "submit": "Send Message"
+        }
+    }
+}

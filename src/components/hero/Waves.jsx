@@ -1,16 +1,11 @@
 // components/home/Waves.js
 import React, { useEffect } from "react";
 import HeroContent from "./HeroContent";
+import { useTranslation } from "react-i18next";
 
 function Waves() {
-  const items = [
-    "Web Developer",
-    "Designer",
-    "3D Artist",
-    "Frontend Developer",
-    "Creative Coder",
-    "UI/UX Specialist",
-  ];
+  const { t } = useTranslation();
+  const items = t("hero.roles", { returnObjects: true });
 
   useEffect(() => {
     const handleParallax = () => {

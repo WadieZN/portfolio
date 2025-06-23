@@ -1,16 +1,17 @@
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
+
 import github from "../assets/img/github-brands.svg";
 import instagram from "../assets/img/instagram.svg";
 import linkedin from "../assets/img/linkedin.svg";
 import mail from "../assets/img/mail.svg";
 
-import { useState } from "react";
-
 function Contact() {
+  const { t } = useTranslation();
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     const form = e.target;
     const data = new FormData(form);
 
@@ -18,9 +19,7 @@ function Contact() {
       await fetch("https://getform.io/f/boloodja", {
         method: "POST",
         body: data,
-        headers: {
-          Accept: "application/json",
-        },
+        headers: { Accept: "application/json" },
       });
 
       setSubmitted(true);
@@ -32,24 +31,19 @@ function Contact() {
 
   return (
     <section id="contact">
-      <h2 className="subtitle">﴾ Contact ﴿</h2>
+      <h2 className="subtitle">{t("contact.title")}</h2>
 
       <div className="contact-grid">
         <div className="contact-info">
-          <h3>Let’s Build Something Great Together</h3>
-          <p>
-            Have an idea you’d like to bring to life? I’m always open to
-            exciting collaborations, creative challenges, or simple
-            conversations.
-            <br />
-            Fill out the form or reach out directly, and I’ll get back to you as
-            soon as possible.
-          </p>
-          <h4>Stay in Touch</h4>
-          <a id="email-link" href="mailto:wadiezaanoune@gmail.com">
+          <h3>{t("contact.headline")}</h3>
+          <p>{t("contact.description")}</p>
+
+          <h4>{t("contact.stayInTouch")}</h4>
+          <a id="email-link" href={`mailto:${t("contact.email")}`}>
             <img src={mail} alt="email" />
-            wadiezaanoune@gmail.com
+            {t("contact.email")}
           </a>
+
           <div>
             <a
               href="https://www.linkedin.com/in/wadie-zaanoune/"
@@ -80,29 +74,34 @@ function Contact() {
 
         {submitted ? (
           <div className="contact-thankyou">
-            <h4>Thank you!</h4>
-            <p>Your message has been successfully sent.</p>
+            <h4>{t("contact.thankYouTitle")}</h4>
+            <p>{t("contact.thankYouMessage")}</p>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="contact-form">
-            <label>Name</label>
-            <input type="text" name="name" placeholder="Your name" required />
-            <label>Email</label>
+            <label>{t("contact.form.nameLabel")}</label>
+            <input
+              type="text"
+              name="name"
+              placeholder={t("contact.form.namePlaceholder")}
+              required
+            />
+            <label>{t("contact.form.emailLabel")}</label>
             <input
               type="email"
               name="email"
-              placeholder="Your email"
+              placeholder={t("contact.form.emailPlaceholder")}
               required
             />
-            <label>Message</label>
+            <label>{t("contact.form.messageLabel")}</label>
             <textarea
               name="message"
               rows="4"
-              placeholder="Share your idea..."
+              placeholder={t("contact.form.messagePlaceholder")}
               required
             ></textarea>
             <button type="submit" className="submit-button">
-              <span>Send Message</span>
+              <span>{t("contact.form.submit")}</span>
             </button>
           </form>
         )}

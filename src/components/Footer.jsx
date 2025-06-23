@@ -1,10 +1,12 @@
 import { useEffect, useRef } from "react";
 import lottie from "lottie-web";
 import animationData from "../assets/Walking_Nomads.json";
+import { useTranslation } from "react-i18next";
 
 function Footer() {
   const container = useRef(null);
   const animRef = useRef(null);
+  const { i18n } = useTranslation();
 
   useEffect(() => {
     animRef.current = lottie.loadAnimation({
@@ -34,6 +36,11 @@ function Footer() {
     };
   }, []);
 
+  const toggleLanguage = () => {
+    const newLang = i18n.language === "en" ? "fr" : "en";
+    i18n.changeLanguage(newLang);
+  };
+
   return (
     <>
       <div className="footer-nomads">
@@ -46,6 +53,9 @@ function Footer() {
 
       <footer>
         <span>WadyZen &copy; {new Date().getFullYear()}</span>
+        <button onClick={toggleLanguage} className="lang-toggle">
+          {i18n.language === "en" ? "FR" : "EN"}
+        </button>
       </footer>
     </>
   );

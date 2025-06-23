@@ -1,0 +1,151 @@
+{
+    "hero": {
+        "roles": [
+            "Développeur Web",
+            "Designer",
+            "Artiste 3D",
+            "Développeur Frontend",
+            "Codeur Créatif",
+            "Spécialiste UI/UX"
+        ]
+    },
+    "about": {
+        "subtitle": "﴾ À propos de moi ﴿",
+        "title": "Un Développeur Marocain",
+        "description": "Je suis un développeur web passionné par la création de sites à la fois beaux et fluides. Depuis mes débuts dans ce domaine, j’ai développé un sens aigu du design, un goût pour le code propre, et une véritable obsession pour offrir la meilleure expérience utilisateur possible. Que ce soit pour du développement frontend, du design UI/UX ou du branding digital, j’adore transformer des idées en sites web complets et soignés. Pour moi, tout repose sur l’équilibre entre créativité et compétence technique, pour un résultat non seulement esthétique, mais aussi rapide, réactif et facile à utiliser."
+    },
+    "career": {
+        "subtitle": "﴾ Parcours ﴿",
+        "title": "Une chronologie de mon parcours",
+        "timeline": [
+            {
+                "title": "Lycée",
+                "date": "2017 - 2020",
+                "description": "Études secondaires axées sur les matières générales."
+            },
+            {
+                "title": "Après le lycée",
+                "date": "2020 - 2021",
+                "description": "Développement personnel à travers la lecture et l’apprentissage autodidacte."
+            },
+            {
+                "title": "Diplôme en informatique",
+                "date": "Octobre 2021 - Juillet 2023",
+                "description": "Obtention d’un diplôme avec une formation pratique."
+            },
+            {
+                "title": "Premier emploi",
+                "date": "Juin 2022 - Janvier 2025",
+                "description": "Assistant administratif au Tribunal de Première Instance."
+            },
+            {
+                "title": "Apprentissage autonome",
+                "date": "2023 - 2024",
+                "description": "Une année dédiée à l’apprentissage indépendant du développement web."
+            },
+            {
+                "title": "Stage en développement web",
+                "date": "Mai 2024",
+                "description": "Stage de 4 mois dans une entreprise internationale."
+            },
+            {
+                "title": "Développeur freelance",
+                "date": "2024 - Présent",
+                "description": "Création de solutions web pour des clients à travers le monde."
+            }
+        ],
+        "description": "Mon parcours dans le développement web n’a pas vraiment commencé en classe. Il a commencé le jour où j’ai décidé d’apprendre par moi-même. J’ai toujours été curieux de comprendre comment les choses fonctionnent, et cette volonté de créer m’a poussé à réaliser des projets, à faire des erreurs, et à ne jamais cesser d’apprendre. En chemin, j’ai eu la chance de collaborer avec des personnes formidables partout dans le monde. Ces expériences m’ont non seulement rendu meilleur développeur, mais elles m’ont aussi appris à rester ouvert, à m’adapter et à voir les choses sous différents angles."
+    },
+    "projects": {
+        "subtitle": "﴾ Projets ﴿",
+        "linkTitle": "Liens",
+        "list": [
+            {
+                "name": "Infinite Padel Courts",
+                "text": "Configurateur 3D personnalisé et refonte pour une entreprise de construction de courts de padel.",
+                "stack": [
+                    "WordPress",
+                    "Three.js",
+                    "JavaScript",
+                    "Elementor",
+                    "CSS3"
+                ],
+                "links": {
+                    "live": "https://infinitepadelcourts.com"
+                }
+            },
+            {
+                "name": "Système de gestion de location de voitures",
+                "text": "Plateforme complète pour les entreprises de location : réservations, factures, tableaux de bord, etc.",
+                "stack": [
+                    "React",
+                    "Express",
+                    "Node.js",
+                    "PostgreSQL"
+                ],
+                "links": {
+                    "text": "Non disponible pour raisons de confidentialité"
+                }
+            },
+            {
+                "name": "MH FITPRO",
+                "text": "Site moderne et responsive pour une entreprise de création d’espaces de sport et bien-être.",
+                "stack": [
+                    "WordPress",
+                    "Elementor",
+                    "CSS3",
+                    "PHP"
+                ],
+                "links": {
+                    "live": "https://mhfitpro.net"
+                }
+            },
+            {
+                "name": "CineZen",
+                "text": "Découvrez et suivez vos films et séries préférés grâce à l’intégration de l’API TMDb.",
+                "stack": [
+                    "React",
+                    "JavaScript",
+                    "SCSS",
+                    "TMDb API"
+                ],
+                "links": {
+                    "github": "https://github.com/WadieZN/CineZen",
+                    "live": "https://cine-zen.netlify.app"
+                }
+            },
+            {
+                "name": "Jeu de mémoire",
+                "text": "Jeu de cartes mémoire responsive avec des personnages d’anime. Amusant pour tous les âges !",
+                "stack": [
+                    "React",
+                    "JavaScript",
+                    "SCSS",
+                    "Anilist API"
+                ],
+                "links": {
+                    "github": "https://github.com/WadieZN/Memory-Card",
+                    "live": "https://wadyzen-memory-game.netlify.app/"
+                }
+            }
+        ]
+    },
+    "contact": {
+        "title": "﴾ Contact ﴿",
+        "headline": "Construisons ensemble quelque chose de grand",
+        "description": "Vous avez une idée à concrétiser ? Je suis toujours partant pour des collaborations passionnantes, des défis créatifs ou simplement discuter.\nRemplissez le formulaire ou contactez-moi directement, je vous répondrai dès que possible.",
+        "stayInTouch": "Restons en contact",
+        "email": "wadiezaanoune@gmail.com",
+        "thankYouTitle": "Merci !",
+        "thankYouMessage": "Votre message a été envoyé avec succès.",
+        "form": {
+            "nameLabel": "Nom",
+            "namePlaceholder": "Votre nom",
+            "emailLabel": "Email",
+            "emailPlaceholder": "Votre email",
+            "messageLabel": "Message",
+            "messagePlaceholder": "Parlez-moi de votre idée...",
+            "submit": "Envoyer le message"
+        }
+    }
+}
