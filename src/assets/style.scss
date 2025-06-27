@@ -32,6 +32,8 @@
 
     --light-invert: invert(100%);
     --dark-invert: invert(0%);
+    --nomads-invert: invert(0%);
+
 }
 
 .dark {
@@ -45,12 +47,13 @@
     --back-wave: #50402a;
     --middle-wave: #352b1c;
     --sky: #1c2835;
-    --scroll-bg-light: #bcdde2;
-    --scroll-bg-dark: #89a0b6;
+    --scroll-bg-light: #8cbdc5;
+    --scroll-bg-dark: #647f97;
     --scroll-shadow: #a3f3ff;
 
     --light-invert: invert(0%);
     --dark-invert: invert(100%);
+    --nomads-invert: invert(75%);
 }
 
 
@@ -318,6 +321,7 @@ button {
             img {
                 width: 100%;
                 max-width: 100%;
+                filter: var(--dark-invert);
             }
         }
     }
@@ -362,7 +366,7 @@ button {
     width: 100%;
     margin: 0 25px;
     aspect-ratio: 1 / 1;
-    filter: var(--dark-invert);
+    filter: var(--nomads-invert);
 }
 
 .timeline-title {
@@ -925,7 +929,7 @@ footer {
 .footer-nomads {
     overflow: hidden;
     height: 200px;
-    filter: var(--dark-invert);
+    filter: var(--nomads-invert);
 
     .nomads-wrapper {
         display: flex;

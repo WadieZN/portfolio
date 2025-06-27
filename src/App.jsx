@@ -7,10 +7,10 @@ import About from "./components/About";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Career from "./components/Career";
-import { useGoogleAnalytics } from "./analytics"; 
+import { useGoogleAnalytics } from "./analytics";
 
 function App() {
-    useGoogleAnalytics();
+  useGoogleAnalytics();
 
   const [isDarkMode, setIsDarkMode] = useState(() => {
     return localStorage.getItem("darkMode") === "true";
@@ -54,7 +54,7 @@ function App() {
       <main>
         <About />
         <Career />
-        <Projects />
+        <Projects isDarkMode={isDarkMode} />
         <Contact />
         <Footer />
       </main>

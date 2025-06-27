@@ -4,15 +4,22 @@ import { useTranslation } from "react-i18next";
 
 import project1 from "../assets/img/project1.png";
 import project2 from "../assets/img/project2.png";
+import project2dark from "../assets/img/project2dark.png";
 import project3 from "../assets/img/project3.png";
 import project4 from "../assets/img/project4.png";
 import project5 from "../assets/img/project5.png";
 
-function Projects() {
+function Projects({ isDarkMode }) {
   const { t } = useTranslation();
   const translatedProjects = t("projects.list", { returnObjects: true });
 
-  const images = [project1, project2, project5, project3, project4];
+  const images = [
+    project1,
+    isDarkMode ? project2dark : project2,
+    project5,
+    project3,
+    project4,
+  ];
 
   const projects = translatedProjects.map((project, index) => ({
     ...project,
