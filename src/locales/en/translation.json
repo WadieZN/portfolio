@@ -19,36 +19,43 @@
         "title": "A timeline that represents my journey",
         "timeline": [
             {
+                "id": "1",
                 "title": "High School",
                 "date": "2017 - 2020",
                 "description": "Completed secondary education with a focus on general studies."
             },
             {
+                "id": "2",
                 "title": "Post High School",
                 "date": "2020 - 2021",
                 "description": "Focused on personal growth through reading and life learning."
             },
             {
+                "id": "3",
                 "title": "IT Diploma",
                 "date": "2021 - July 2023",
                 "description": "Pursued and obtained an IT Diploma with hands-on technical training."
             },
             {
+                "id": "4",
                 "title": "First Job",
                 "date": "2022 - January 2025",
                 "description": "Worked as an Administrative Assistant at the Court of First Instance."
             },
             {
+                "id": "5",
                 "title": "Self Learning",
                 "date": "2023 - 2024",
                 "description": "Dedicated one year to independently learning full stack web development."
             },
             {
+                "id": "6",
                 "title": "Web Dev Internship",
                 "date": "May 2024",
                 "description": "Completed a 4-month internship at an international company."
             },
             {
+                "id": "7",
                 "title": "Freelance Developer",
                 "date": "2024 - Present",
                 "description": "Delivering web development solutions for clients worldwide."

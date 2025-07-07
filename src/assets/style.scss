@@ -53,7 +53,7 @@
 
     --light-invert: invert(0%);
     --dark-invert: invert(100%);
-    --nomads-invert: invert(75%);
+    --nomads-invert: invert(39%) sepia(12%) saturate(2158%) hue-rotate(165deg) brightness(92%) contrast(86%);
 }
 
 
@@ -862,7 +862,7 @@ form {
     }
 
     img {
-        width: 35px;
+        width: 45px;
         animation: rotate-inverse 25s infinite linear;
     }
 

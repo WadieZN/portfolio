@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import github from "../assets/img/github-brands.svg";
-import instagram from "../assets/img/instagram.svg";
+import whatsapp from "../assets/img/whatsapp.svg";
 import linkedin from "../assets/img/linkedin.svg";
 import mail from "../assets/img/mail.svg";
 
@@ -46,6 +46,14 @@ function Contact() {
 
           <div>
             <a
+              href="https://wa.me/212609831645/"
+              target="_blank"
+              rel="noreferrer"
+              className="link-circle"
+            >
+              <img src={whatsapp} alt="Whatsapp" />
+            </a>
+            <a
               href="https://www.linkedin.com/in/wadie-zaanoune/"
               target="_blank"
               rel="noreferrer"
@@ -53,14 +61,7 @@ function Contact() {
             >
               <img src={linkedin} alt="Linkedin" />
             </a>
-            <a
-              href="https://www.instagram.com/wadyzen/"
-              target="_blank"
-              rel="noreferrer"
-              className="link-circle"
-            >
-              <img src={instagram} alt="Instagram" />
-            </a>
+
             <a
               href="https://github.com/WadieZN"
               target="_blank"

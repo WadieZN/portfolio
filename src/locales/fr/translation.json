@@ -15,40 +15,47 @@
         "description": "Je suis un développeur web passionné par la création de sites à la fois beaux et fluides. Depuis mes débuts dans ce domaine, j’ai développé un sens aigu du design, un goût pour le code propre, et une véritable obsession pour offrir la meilleure expérience utilisateur possible. Que ce soit pour du développement frontend, du design UI/UX ou du branding digital, j’adore transformer des idées en sites web complets et soignés. Pour moi, tout repose sur l’équilibre entre créativité et compétence technique, pour un résultat non seulement esthétique, mais aussi rapide, réactif et facile à utiliser."
     },
     "career": {
-        "subtitle": "﴾ Parcours ﴿",
+        "subtitle": "﴾ Carrière ﴿",
         "title": "Une chronologie de mon parcours",
         "timeline": [
             {
+                "id": "1",
                 "title": "Lycée",
                 "date": "2017 - 2020",
                 "description": "Études secondaires axées sur les matières générales."
             },
             {
+                "id": "2",
                 "title": "Après le lycée",
                 "date": "2020 - 2021",
                 "description": "Développement personnel à travers la lecture et l’apprentissage autodidacte."
             },
             {
+                "id": "3",
                 "title": "Diplôme en informatique",
                 "date": "Octobre 2021 - Juillet 2023",
                 "description": "Obtention d’un diplôme avec une formation pratique."
             },
             {
+                "id": "4",
                 "title": "Premier emploi",
                 "date": "Juin 2022 - Janvier 2025",
                 "description": "Assistant administratif au Tribunal de Première Instance."
             },
             {
+                "id": "5",
                 "title": "Apprentissage autonome",
                 "date": "2023 - 2024",
                 "description": "Une année dédiée à l’apprentissage indépendant du développement web."
             },
             {
+                "id": "6",
                 "title": "Stage en développement web",
                 "date": "Mai 2024",
                 "description": "Stage de 4 mois dans une entreprise internationale."
             },
             {
+                "id": "7",
                 "title": "Développeur freelance",
                 "date": "2024 - Présent",
                 "description": "Création de solutions web pour des clients à travers le monde."
