@@ -68,6 +68,20 @@
         "linkTitle": "Links",
         "list": [
             {
+                "name": "SimoLimo",
+                "text": "Luxury limousine and premium car booking website for a Denver-based transportation company.",
+                "stack": [
+                    "WordPress",
+                    "Elementor",
+                    "Fluent Forms",
+                    "JavaScript",
+                    "CSS3"
+                ],
+                "links": {
+                    "live": "https://simolimo.net"
+                }
+            },
+            {
                 "name": "Infinite Padel Courts",
                 "text": "Custom 3D configurator and redesign for a padel court construction company.",
                 "stack": [

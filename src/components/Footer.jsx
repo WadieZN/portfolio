@@ -54,6 +54,7 @@ function Footer() {
       <footer>
         <span>WadyZen &copy; {new Date().getFullYear()}</span>
         <button
+        title={i18n.language === "en" ? "Change language" : "Changer la langue"}
           onClick={() => {
             toggleLanguage();
             window.scrollTo({ top: 0, behavior: "smooth" });

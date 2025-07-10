@@ -68,6 +68,20 @@
         "linkTitle": "Liens",
         "list": [
             {
+                "name": "SimoLimo",
+                "text": "Site de réservation de limousines de luxe et de voitures haut de gamme pour une entreprise de transport basée à Denver.",
+                "stack": [
+                    "WordPress",
+                    "Elementor",
+                    "Fluent Forms",
+                    "JavaScript",
+                    "CSS3"
+                ],
+                "links": {
+                    "live": "https://simolimo.net"
+                }
+            },
+            {
                 "name": "Infinite Padel Courts",
                 "text": "Configurateur 3D personnalisé et refonte pour une entreprise de construction de courts de padel.",
                 "stack": [

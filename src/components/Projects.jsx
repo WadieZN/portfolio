@@ -8,12 +8,14 @@ import project2dark from "../assets/img/project2dark.png";
 import project3 from "../assets/img/project3.png";
 import project4 from "../assets/img/project4.png";
 import project5 from "../assets/img/project5.png";
+import project6 from "../assets/img/project6.png";
 
 function Projects({ isDarkMode }) {
   const { t } = useTranslation();
   const translatedProjects = t("projects.list", { returnObjects: true });
 
   const images = [
+    project6,
     project1,
     isDarkMode ? project2dark : project2,
     project5,
