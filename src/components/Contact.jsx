@@ -46,7 +46,7 @@ function Contact() {
 
           <div>
             <a
-              href="https://wa.me/212609831645/"
+              href="https://wa.me/212780284816/"
               target="_blank"
               rel="noreferrer"
               className="link-circle"
