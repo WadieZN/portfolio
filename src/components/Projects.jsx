@@ -9,12 +9,15 @@ import project3 from "../assets/img/project3.png";
 import project4 from "../assets/img/project4.png";
 import project5 from "../assets/img/project5.png";
 import project6 from "../assets/img/project6.png";
+import comingSoon from "../assets/img/coming-soon-light.png";
+import comingSoonDark from "../assets/img/coming-soon-dark.png";
 
 function Projects({ isDarkMode }) {
   const { t } = useTranslation();
   const translatedProjects = t("projects.list", { returnObjects: true });
 
   const images = [
+    isDarkMode ? comingSoonDark : comingSoon,
     project6,
     project1,
     isDarkMode ? project2dark : project2,

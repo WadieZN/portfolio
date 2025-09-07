@@ -68,6 +68,19 @@
         "linkTitle": "Liens",
         "list": [
             {
+                "name": "FitFlame",
+                "text": "Une plateforme moderne proposant un sélecteur de muscles interactif pour des tutoriels d’entraînement, des guides nutritionnels et des calculateurs fitness.",
+                "stack": [
+                    "Next.JS",
+                    "React",
+                    "SCSS",
+                    "JavaScript"
+                ],
+                "links": {
+                    "text": "Actuellement en développement"
+                }
+            },
+            {
                 "name": "SimoLimo",
                 "text": "Site de réservation de limousines de luxe et de voitures haut de gamme pour une entreprise de transport basée à Denver.",
                 "stack": [
