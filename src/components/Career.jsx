@@ -1,7 +1,11 @@
 import { useEffect, useRef, useState } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import star from "./../assets/img/star.svg";
 import NomadKnight from "./NomadKnight";
 import { useTranslation } from "react-i18next";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Careers = () => {
   const { t } = useTranslation();
@@ -14,28 +18,30 @@ const Careers = () => {
   const [activeItems, setActiveItems] = useState([]);
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (!containerRef.current || !fillRef.current) return;
+    const container = containerRef.current;
+    const fill = fillRef.current;
+    if (!container || !fill) return;
 
-      const container = containerRef.current;
-      const fill = fillRef.current;
-      const rect = container.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
+    let scrollTriggerInstance = null;
 
-      const scrollProgress = windowHeight / 2 - rect.top;
-      const maxFill = container.offsetHeight;
-
-      const fillHeight = Math.min(Math.max(0, scrollProgress), maxFill);
-      fill.style.height = `${fillHeight}px`;
+    const updateActiveItems = () => {
+      const fillHeight = fill.offsetHeight;
+      const containerRect = container.getBoundingClientRect();
 
       const newActiveItems = [];
 
-      dotRefs.current.forEach((ref, index) => {
-        if (!ref) return;
-        const dotRect = ref.getBoundingClientRect();
-        const dotTopRelativeToContainer = dotRect.top - rect.top;
+      dotRefs.current.forEach((dot, index) => {
+        if (!dot) return;
 
-        if (dotTopRelativeToContainer <= fillHeight) {
+        const dotRect = dot.getBoundingClientRect();
+        const dotTopRelativeToContainer = dotRect.top - containerRect.top;
+
+        let threshold = 10;
+        if (index === 0 || index === dotRefs.current.length - 1) {
+          threshold = 20;
+        }
+
+        if (dotTopRelativeToContainer <= fillHeight + threshold) {
           newActiveItems.push(index);
         }
       });
@@ -43,9 +49,46 @@ const Careers = () => {
       setActiveItems(newActiveItems);
     };
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
+    scrollTriggerInstance = ScrollTrigger.create({
+      trigger: container,
+      start: "top center",
+      end: "bottom center",
+      scrub: true,
+      onUpdate: updateActiveItems,
+      onEnter: () => {
+        setActiveItems([0]);
+      },
+      onLeave: () => {
+        const allIndices = dotRefs.current.map((_, index) => index);
+        setActiveItems(allIndices);
+      },
+      onLeaveBack: () => {
+        setActiveItems([]);
+      },
+      onRefresh: updateActiveItems,
+    });
+
+    gsap.to(fill, {
+      height: container.offsetHeight,
+      ease: "none",
+      scrollTrigger: {
+        trigger: container,
+        start: "top center",
+        end: "bottom center",
+        scrub: true,
+      },
+    });
+
+    // Initial update
+    updateActiveItems();
+
+    // Cleanup function
+    return () => {
+      if (scrollTriggerInstance) scrollTriggerInstance.kill();
+      ScrollTrigger.getAll().forEach((trigger) => {
+        if (trigger.trigger === container) trigger.kill();
+      });
+    };
   }, []);
 
   return (

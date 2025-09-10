@@ -1,24 +1,28 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import wall from "../assets/img/moroccan-wall.png";
 import { useTranslation } from "react-i18next";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 function About() {
   const { t } = useTranslation();
-
   const imgRef = useRef(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const rotate = scrollY * 0.07;
+    if (!imgRef.current) return;
 
-      if (imgRef.current) {
-        imgRef.current.style.transform = `rotateZ(${rotate}deg)`;
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    gsap.to(imgRef.current, {
+      rotationZ: 160,
+      ease: "none",
+      scrollTrigger: {
+        trigger: "#about",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true,
+      },
+    });
   }, []);
 
   return (
@@ -31,7 +35,6 @@ function About() {
             alt="Moroccan wall texture rotating"
             ref={imgRef}
             style={{
-              transition: "transform 0.1s ease-out",
               willChange: "transform",
             }}
           />

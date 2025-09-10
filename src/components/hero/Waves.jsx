@@ -1,50 +1,73 @@
 // components/home/Waves.js
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import HeroContent from "./HeroContent";
 import { useTranslation } from "react-i18next";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 function Waves() {
   const { t } = useTranslation();
   const items = t("hero.roles", { returnObjects: true });
 
+  const backWaveRef = useRef(null);
+  const middleWaveRef = useRef(null);
+  const heroContentRef = useRef(null);
+
   useEffect(() => {
-    const handleParallax = () => {
-      const scrollY = window.scrollY;
+    gsap.to(backWaveRef.current, {
+      y: 150,
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".hero",
+        start: "top top",
+        scrub: true,
+      },
+    });
 
-      document
-        .querySelector(".back-wave")
-        ?.setAttribute("style", `transform: translateY(${scrollY * 0.2}px);`);
-      document
-        .querySelector(".middle-wave")
-        ?.setAttribute("style", `transform: translateY(${scrollY * 0.1}px);`);
-      document
-        .querySelector(".hero-content")
-        ?.setAttribute("style", `transform: translateY(-${scrollY * 0.25}px);`);
-    };
+    gsap.to(middleWaveRef.current, {
+      y: 100,
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".hero",
+        start: "top top",
+        scrub: true,
+      },
+    });
 
-    window.addEventListener("scroll", handleParallax);
-    return () => window.removeEventListener("scroll", handleParallax);
+    gsap.to(heroContentRef.current, {
+      y: 500,
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".hero",
+        start: "top top",
+        scrub: true,
+      },
+    });
   }, []);
 
   return (
     <div className="waves">
-      <HeroContent items={items} />
-      <div className="back-wave">
+      <div className="back-wave" ref={backWaveRef}>
         <svg
           viewBox="0 0 900 600"
           preserveAspectRatio="none"
           className="wave-svg"
         >
-          <path d="M0 384L50 398.8C100 413.7 200 443.3 300 439.2C400 435 500 397 600 390C700 383 800 407 850 419L900 431L900 601L850 601C800 601 700 601 600 601C500 601 400 601 300 601C200 601 100 601 50 601L0 601Z" />
+          <path d="M0 384L50 398.8C100 413.7 200 443.3 300 439.2C400 435 500 397 600 390C700 383 800 407 850 419L900 431L900 601L0 601Z" />
         </svg>
       </div>
-      <div className="middle-wave">
+
+      <HeroContent items={items} ref={heroContentRef} />
+
+      <div className="middle-wave" ref={middleWaveRef}>
         <svg
           viewBox="0 0 900 600"
           preserveAspectRatio="none"
           className="wave-svg"
         >
-          <path d="M0 441L30 451.5C60 462 120 483 180 484.2C240 485.3 300 466.7 360 462.8C420 459 480 470 540 484.8C600 499.7 660 518.3 720 517.7C780 517 840 497 870 487L900 477L900 601L870 601C840 601 780 601 720 601C660 601 600 601 540 601C480 601 420 601 360 601C300 601 240 601 180 601C120 601 60 601 30 601L0 601Z" />
+          <path d="M0 441L30 451.5C60 462 120 483 180 484.2C240 485.3 300 466.7 360 462.8C420 459 480 470 540 484.8C600 499.7 660 518.3 720 517.7C780 517 840 497 870 487L900 477L900 601L0 601Z" />
         </svg>
       </div>
       <div className="front-wave">

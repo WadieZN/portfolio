@@ -2,6 +2,10 @@ import { useEffect, useRef } from "react";
 import lottie from "lottie-web";
 import animationData from "../assets/Walking_Nomads.json";
 import { useTranslation } from "react-i18next";
+import gsap from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
+gsap.registerPlugin(ScrollToPlugin);
 
 function Footer() {
   const container = useRef(null);
@@ -39,6 +43,10 @@ function Footer() {
   const toggleLanguage = () => {
     const newLang = i18n.language === "en" ? "fr" : "en";
     i18n.changeLanguage(newLang);
+
+    if (window.smoother) {
+      window.smoother.scrollTo(0, true);
+    }
   };
 
   return (
@@ -54,10 +62,11 @@ function Footer() {
       <footer>
         <span>WadyZen &copy; {new Date().getFullYear()}</span>
         <button
-        title={i18n.language === "en" ? "Change language" : "Changer la langue"}
+          title={
+            i18n.language === "en" ? "Change language" : "Changer la langue"
+          }
           onClick={() => {
             toggleLanguage();
-            window.scrollTo({ top: 0, behavior: "smooth" });
           }}
           className="lang-toggle"
         >

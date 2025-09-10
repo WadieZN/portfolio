@@ -18,23 +18,7 @@ function NomadKnight() {
       },
     });
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            animationRef.current?.goToAndPlay(0, true);
-          }
-        });
-      },
-      { threshold: 0.9 }
-    );
-
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
-    }
-
     return () => {
-      observer.disconnect();
       animationRef.current?.destroy();
     };
   }, []);

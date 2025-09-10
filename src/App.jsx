@@ -8,14 +8,14 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Career from "./components/Career";
 import { useGoogleAnalytics } from "./analytics";
+import SmoothScroll from "./components/SmoothScroll";
 
 function App() {
   useGoogleAnalytics();
 
-  const [isDarkMode, setIsDarkMode] = useState(() => {
-    return localStorage.getItem("darkMode") === "true";
-  });
-
+  const [isDarkMode, setIsDarkMode] = useState(
+    localStorage.getItem("darkMode") === "true"
+  );
   const [isHiding, setIsHiding] = useState(false);
   const [currentIcon, setCurrentIcon] = useState(isDarkMode ? moon : sun);
   const [currentAlt, setCurrentAlt] = useState(
@@ -40,7 +40,7 @@ function App() {
   };
 
   return (
-    <>
+    <SmoothScroll>
       <button className="mode-toggle" onClick={handleToggle}>
         <div>
           <img
@@ -58,7 +58,7 @@ function App() {
         <Contact />
         <Footer />
       </main>
-    </>
+    </SmoothScroll>
   );
 }
 
