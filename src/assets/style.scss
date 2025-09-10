@@ -489,11 +489,13 @@ button {
     height: 200px;
     min-width: 250px;
     padding-right: 20px;
+    transition: 400ms ease-in;
 
     h3 {
         color: var(--primary-color);
         font-size: 1.5rem;
         font-weight: 600;
+
     }
 
     span {
@@ -502,12 +504,14 @@ button {
         font-weight: 600;
         text-transform: uppercase;
         color: #7a5f5f;
+
     }
 
     p {
         font-size: 1rem;
         font-size: 1.1rem;
         color: #000;
+
     }
 }
 
