@@ -1,9 +1,11 @@
-// components/home/Waves.js
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState, useMemo } from "react";
 import HeroContent from "./HeroContent";
 import { useTranslation } from "react-i18next";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+import Particles, { initParticlesEngine } from "@tsparticles/react";
+import { loadSlim } from "@tsparticles/slim";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,6 +16,53 @@ function Waves() {
   const backWaveRef = useRef(null);
   const middleWaveRef = useRef(null);
   const heroContentRef = useRef(null);
+
+  // particles setup
+  const [init, setInit] = useState(false);
+
+  useEffect(() => {
+    initParticlesEngine(async (engine) => {
+      await loadSlim(engine);
+    }).then(() => {
+      setInit(true);
+    });
+  }, []);
+
+  const particlesLoaded = (container) => {
+    console.log(container);
+  };
+
+  const options = useMemo(
+    () => ({
+      fpsLimit: 120,
+      interactivity: {
+        events: {
+          onHover: { enable: true, mode: "repulse" },
+        },
+        modes: {
+          repulse: { distance: 150, duration: 0.4 },
+        },
+      },
+      particles: {
+        color: { value: "#88805fff" },
+        move: {
+          enable: true,
+          speed: 1.5,
+          direction: "none",
+          outModes: { default: "out" },
+        },
+        number: {
+          density: { enable: true, area: 800 },
+          value: 70,
+        },
+        opacity: { value: 0.5 },
+        shape: { type: "circle" },
+        size: { value: { min: 1, max: 3 } },
+      },
+      detectRetina: true,
+    }),
+    []
+  );
 
   useEffect(() => {
     gsap.to(backWaveRef.current, {
@@ -48,7 +97,7 @@ function Waves() {
   }, []);
 
   return (
-    <div className="waves">
+    <div className="waves relative">
       <div className="back-wave" ref={backWaveRef}>
         <svg
           viewBox="0 0 900 600"
@@ -70,6 +119,15 @@ function Waves() {
           <path d="M0 441L30 451.5C60 462 120 483 180 484.2C240 485.3 300 466.7 360 462.8C420 459 480 470 540 484.8C600 499.7 660 518.3 720 517.7C780 517 840 497 870 487L900 477L900 601L0 601Z" />
         </svg>
       </div>
+
+      {init && (
+        <Particles
+          id="tsparticles"
+          particlesLoaded={particlesLoaded}
+          options={options}
+        />
+      )}
+
       <div className="front-wave">
         <svg
           viewBox="0 0 900 600"

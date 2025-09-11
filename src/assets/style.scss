@@ -29,6 +29,7 @@
     --scroll-bg-light: #fdf6e3;
     --scroll-bg-dark: #fceabb;
     --scroll-shadow: #d1b27c;
+    --timeline-fill: #0c615b;
 
     --light-invert: invert(100%);
     --dark-invert: invert(0%);
@@ -50,6 +51,7 @@
     --scroll-bg-light: #8cbdc5;
     --scroll-bg-dark: #647f97;
     --scroll-shadow: #a3f3ff;
+    --timeline-fill: #7fa0bd;
 
     --light-invert: invert(0%);
     --dark-invert: invert(100%);
@@ -69,7 +71,7 @@
 html {
     scroll-behavior: smooth;
     scrollbar-width: 0.6vw;
-    scrollbar-color: #f9f4ed #000;
+    scrollbar-color: var(--back-wave) #000;
 
     &::-webkit-scrollbar {
         width: 0.6vw;
@@ -89,6 +91,15 @@ body {
     background: var(--bg-color);
     color: var(--text-color);
     transition: 250ms;
+}
+
+#smooth-wrapper {
+    overflow: hidden;
+    height: 100%;
+}
+
+#smooth-content {
+    will-change: transform;
 }
 
 main {
@@ -158,6 +169,7 @@ button {
     overflow: hidden;
     background: var(--sky);
     pointer-events: none;
+    user-select: none;
 
 
     h2 {
@@ -266,6 +278,13 @@ button {
     .back-wave {
         z-index: 2;
         fill: var(--back-wave);
+    }
+
+    #tsparticles {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 4;
     }
 
     .middle-wave {
@@ -442,7 +461,7 @@ button {
 .timeline-fill {
     width: 100%;
     height: 0;
-    background-color: var(--accent-color);
+    background-color: var(--timeline-fill);
     transition: height 0.3s ease-out;
 }
 
@@ -451,7 +470,7 @@ button {
     height: 25px;
     border-radius: 50%;
     background-color: var(--secondary-color);
-    border: 4px solid var(--secondary-color);
+    border: 6px solid var(--secondary-color);
     z-index: 3;
     transition: all 250ms ease;
     margin-left: -50px;
@@ -459,8 +478,10 @@ button {
 
 .timeline-card.active~.timeline-dot,
 .timeline-dot.active {
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
+    background-color: var(--secondary-color);
+    border-color: var(--timeline-fill);
+    width: 35px;
+    height: 35px;
 }
 
 .timeline-card {
