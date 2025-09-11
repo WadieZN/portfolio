@@ -10,9 +10,11 @@ export default function SmoothScroll({ children }) {
     const smoother = ScrollSmoother.create({
       wrapper: "#smooth-wrapper",
       content: "#smooth-content",
-      smooth: 2,
+      smooth: 2, 
       effects: true,
-      normalizeScroll: true, 
+      normalizeScroll: true,
+      ignoreMobileResize: true,
+      smoothTouch: 0.1, 
     });
 
     window.smoother = smoother;
