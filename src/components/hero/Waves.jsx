@@ -19,14 +19,26 @@ function Waves() {
 
   // particles setup
   const [init, setInit] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  // detect desktop
+  useEffect(() => {
+    const checkScreen = () => {
+      setIsDesktop(window.innerWidth >= 1024);
+    };
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
+    return () => window.removeEventListener("resize", checkScreen);
+  }, []);
 
   useEffect(() => {
+    if (!isDesktop) return;
     initParticlesEngine(async (engine) => {
       await loadSlim(engine);
     }).then(() => {
       setInit(true);
     });
-  }, []);
+  }, [isDesktop]);
 
   const particlesLoaded = (container) => {
     console.log(container);
@@ -120,7 +132,7 @@ function Waves() {
         </svg>
       </div>
 
-      {init && (
+      {isDesktop && init && (
         <Particles
           id="tsparticles"
           particlesLoaded={particlesLoaded}
