@@ -68,16 +68,16 @@
         "linkTitle": "Links",
         "list": [
             {
-                "name": "FitFlame",
-                "text": "A modern platform featuring an interactive muscle selector for training tutorials, nutrition guides and fitness calculators.",
+                "name": "Dar'Loca",
+                "text": "A full-featured platform for car rental businesses, including bookings, invoices, dashboards and more.",
                 "stack": [
-                    "Next.JS",
                     "React",
-                    "SCSS",
-                    "JavaScript"
+                    "Express",
+                    "Node.js",
+                    "PostgreSQL"
                 ],
                 "links": {
-                    "text": "Currently in development"
+                    "live": "https://darloca.com/"
                 }
             },
             {
@@ -101,22 +101,10 @@
                     "WordPress",
                     "Three.js",
                     "JavaScript",
-                    "Elementor"                ],
-                "links": {
-                    "live": "https://infinitepadelcourts.com"
-                }
-            },
-            {
-                "name": "Car Rental Management System",
-                "text": "A full-featured platform for car rental businesses, including bookings, invoices, dashboards and more.",
-                "stack": [
-                    "React",
-                    "Express",
-                    "Node.js",
-                    "PostgreSQL"
+                    "Elementor"
                 ],
                 "links": {
-                    "text": "Not available due to privacy"
+                    "live": "https://infinitepadelcourts.com"
                 }
             },
             {

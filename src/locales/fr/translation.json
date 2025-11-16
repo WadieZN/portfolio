@@ -67,17 +67,17 @@
         "subtitle": "﴾ Projets ﴿",
         "linkTitle": "Liens",
         "list": [
-            {
-                "name": "FitFlame",
-                "text": "Une plateforme moderne proposant un sélecteur de muscles interactif pour des tutoriels d’entraînement, des guides nutritionnels et des calculateurs fitness.",
+             {
+                "name": "Dar'Loca",
+                "text": "Plateforme complète pour les entreprises de location : réservations, factures, tableaux de bord, etc.",
                 "stack": [
-                    "Next.JS",
                     "React",
-                    "SCSS",
-                    "JavaScript"
+                    "Express",
+                    "Node.js",
+                    "PostgreSQL"
                 ],
                 "links": {
-                    "text": "Actuellement en développement"
+                    "live": "https://darloca.com/"
                 }
             },
             {
@@ -104,19 +104,6 @@
                     "Elementor"                ],
                 "links": {
                     "live": "https://infinitepadelcourts.com"
-                }
-            },
-            {
-                "name": "Système de gestion de location de voitures",
-                "text": "Plateforme complète pour les entreprises de location : réservations, factures, tableaux de bord, etc.",
-                "stack": [
-                    "React",
-                    "Express",
-                    "Node.js",
-                    "PostgreSQL"
-                ],
-                "links": {
-                    "text": "Non disponible pour raisons de confidentialité"
                 }
             },
             {
