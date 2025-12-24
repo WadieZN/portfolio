@@ -67,7 +67,7 @@
         "subtitle": "﴾ Projets ﴿",
         "linkTitle": "Liens",
         "list": [
-             {
+            {
                 "name": "Dar'Loca",
                 "text": "Plateforme complète pour les entreprises de location : réservations, factures, tableaux de bord, etc.",
                 "stack": [
@@ -77,7 +77,7 @@
                     "PostgreSQL"
                 ],
                 "links": {
-                    "live": "https://darloca.com/"
+                    "text": "À venir"
                 }
             },
             {
@@ -101,13 +101,14 @@
                     "WordPress",
                     "Three.js",
                     "JavaScript",
-                    "Elementor"                ],
+                    "Elementor"
+                ],
                 "links": {
                     "live": "https://infinitepadelcourts.com"
                 }
             },
             {
-                "name": "MH FITPRO",
+                "name": "Infinite Sport",
                 "text": "Site moderne et responsive pour une entreprise de création d’espaces de sport et bien-être.",
                 "stack": [
                     "WordPress",
@@ -116,7 +117,7 @@
                     "PHP"
                 ],
                 "links": {
-                    "live": "https://mhfitpro.net"
+                    "live": "https://infinitesport.pro"
                 }
             },
             {

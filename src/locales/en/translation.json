@@ -77,7 +77,7 @@
                     "PostgreSQL"
                 ],
                 "links": {
-                    "live": "https://darloca.com/"
+                    "text": "Coming soon"
                 }
             },
             {
@@ -108,7 +108,7 @@
                 }
             },
             {
-                "name": "MH FITPRO",
+                "name": "Infinite Sport",
                 "text": "A modern, responsive website for a company that builds gyms and wellness spaces.",
                 "stack": [
                     "WordPress",
@@ -117,7 +117,7 @@
                     "PHP"
                 ],
                 "links": {
-                    "live": "https://mhfitpro.net"
+                    "live": "https://infinitesport.pro"
                 }
             },
             {
