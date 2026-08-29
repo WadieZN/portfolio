@@ -14,12 +14,12 @@ function App() {
   useGoogleAnalytics();
 
   const [isDarkMode, setIsDarkMode] = useState(
-    localStorage.getItem("darkMode") === "true"
+    localStorage.getItem("darkMode") === "true",
   );
   const [isHiding, setIsHiding] = useState(false);
   const [currentIcon, setCurrentIcon] = useState(isDarkMode ? moon : sun);
   const [currentAlt, setCurrentAlt] = useState(
-    isDarkMode ? "Dark mode" : "Light mode"
+    isDarkMode ? "Dark mode" : "Light mode",
   );
 
   useEffect(() => {
@@ -52,11 +52,19 @@ function App() {
       </button>
       <Hero />
       <main>
-        <About />
-        <Career />
-        <Projects isDarkMode={isDarkMode} />
-        <Contact />
-        <Footer />
+        <div
+          style={{
+            background: "var(--bg-color)",
+          }}
+        >
+          <About />
+          <Career />
+        </div>
+        <div style={{ background: "var(--sky)" }}>
+          <Projects isDarkMode={isDarkMode} />
+          <Contact />
+          <Footer />
+        </div>
       </main>
     </SmoothScroll>
   );

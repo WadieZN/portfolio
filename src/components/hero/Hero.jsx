@@ -1,5 +1,3 @@
-// components/hero/Hero.js
-import React from "react";
 import Waves from "./Waves";
 
 function Hero() {

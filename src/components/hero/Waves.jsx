@@ -4,7 +4,6 @@ import { useTranslation } from "react-i18next";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -17,64 +16,7 @@ function Waves() {
   const middleWaveRef = useRef(null);
   const heroContentRef = useRef(null);
 
-  // particles setup
-  const [init, setInit] = useState(false);
-  const [isDesktop, setIsDesktop] = useState(false);
 
-  // detect desktop
-  useEffect(() => {
-    const checkScreen = () => {
-      setIsDesktop(window.innerWidth >= 1024);
-    };
-    checkScreen();
-    window.addEventListener("resize", checkScreen);
-    return () => window.removeEventListener("resize", checkScreen);
-  }, []);
-
-  useEffect(() => {
-    if (!isDesktop) return;
-    initParticlesEngine(async (engine) => {
-      await loadSlim(engine);
-    }).then(() => {
-      setInit(true);
-    });
-  }, [isDesktop]);
-
-  const particlesLoaded = (container) => {
-    console.log(container);
-  };
-
-  const options = useMemo(
-    () => ({
-      fpsLimit: 120,
-      interactivity: {
-        events: {
-          onHover: { enable: true, mode: "repulse" },
-        },
-        modes: {
-          repulse: { distance: 150, duration: 0.4 },
-        },
-      },
-      particles: {
-        color: { value: "#88805fff" },
-        move: {
-          enable: true,
-          speed: 1.5,
-          direction: "none",
-          outModes: { default: "out" },
-        },
-        number: {
-          density: { enable: true, area: 800 },
-          value: 70,
-        },
-        opacity: { value: 0.5 },
-        shape: { type: "circle" },
-        size: { value: { min: 1, max: 3 } },
-      },
-      detectRetina: true,
-    }),
-    []
-  );
 
   useEffect(() => {
     gsap.to(backWaveRef.current, {
@@ -132,13 +74,6 @@ function Waves() {
         </svg>
       </div>
 
-      {isDesktop && init && (
-        <Particles
-          id="tsparticles"
-          particlesLoaded={particlesLoaded}
-          options={options}
-        />
-      )}
 
       <div className="front-wave">
         <svg
