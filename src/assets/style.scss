@@ -35,8 +35,7 @@
     --dark-invert: invert(0%);
     --nomads-invert: invert(0%);
 
-    --sand: #d9c08e;
-    --sand-dark: #b89a5e;
+    --sand: #4a3c25;
 
 }
 
@@ -60,8 +59,8 @@
     --dark-invert: invert(100%);
     --nomads-invert: invert(39%) sepia(12%) saturate(2158%) hue-rotate(165deg) brightness(92%) contrast(86%);
 
-    --sand: #4a3c25;
-    --sand-dark: #2e2515;
+    --sand: #c6aa73;
+
 }
 
 
@@ -579,36 +578,73 @@ button {
 
 // --- Sand divider ------------------------------------------------------
 
+
 .sand-divider {
     position: relative;
     width: 100%;
-    height: 220px;
+    height: 375px;
     background: var(--sky);
     overflow: hidden;
     pointer-events: none;
+    isolation: isolate;
+    --fall-distance: 400px; // keep ≥ height above, so grains traverse the whole box
 }
 
-.sand-dune {
+.sand-dune-layer {
     position: absolute;
-    bottom: 20px;
-    left: 0;
+    inset: 0;
+    will-change: transform;
+}
+
+// Static vertical flip, kept off the GSAP-animated .sand-dune-layer
+// itself (see SandDivider.jsx doc comment for why).
+.sand-dune-flip {
+    width: 100%;
+    height: 100%;
+    transform: scaleY(-1);
+}
+
+.sand-dune-svg {
     width: 100%;
     height: 100%;
     display: block;
-    fill: var(--bg-color);
+}
+
+.sand-dune-layer--back {
+    z-index: 1;
+
+    .sand-dune-svg {
+        fill: var(--back-wave);
+    }
+}
+
+.sand-dune-layer--middle {
+    z-index: 3;
+
+    .sand-dune-svg {
+        fill: var(--middle-wave);
+    }
+}
+
+.sand-dune-layer--front {
+    z-index: 4;
+
+    .sand-dune-svg {
+        fill: var(--bg-color);
+    }
 }
 
 .sand-grains {
     position: absolute;
     inset: 0;
-    z-index: 1;
+    z-index: 2; // between the back/middle dunes and the front one
 }
 
 .sand-grain {
     position: absolute;
     top: -10px;
     border-radius: 50%;
-    background: var(--back-wave);
+    background: var(--sand);
     opacity: 0;
     animation-name: sand-fall;
     animation-timing-function: ease-in;
@@ -616,7 +652,7 @@ button {
 
     @media (prefers-reduced-motion: reduce) {
         animation: none;
-        opacity: 0.7;
+        opacity: 0.5;
         top: 60%;
     }
 }
@@ -632,10 +668,18 @@ button {
     }
 
     100% {
-        transform: translate(var(--drift), 230px);
+        transform: translate(var(--drift), var(--fall-distance));
         opacity: 0;
     }
 }
+
+@media screen and (max-width: 768px) {
+    .sand-divider {
+        height: 350px;
+        --fall-distance: 350px;
+    }
+}
+
 
 // --- Projects layout -----------------------------------------------------
 
@@ -736,53 +780,53 @@ button {
             letter-spacing: 0.5px;
             line-height: 1.75rem;
         }
+    }
+}
 
-        .project-stack {
-            @include flex-center();
-            justify-content: start;
-            flex-wrap: wrap;
+.project-links {
+    @include flex-center();
+    justify-content: start;
+    flex-wrap: wrap;
+    margin-top: 10px;
 
-            li,
-            span {
-                font-size: 0.8rem;
-                font-weight: 600;
-                text-transform: uppercase;
-                margin-right: 10px;
-                margin-bottom: 5px;
-                display: flex;
-                align-items: center;
-                color: var(--accent-color);
-            }
+    a {
+        @include flex-center();
+        padding: 6px 12px;
+        border-radius: 5px;
+        background: var(--accent-color);
+        color: var(--bg-color);
+        margin-right: 10px;
+        margin-bottom: 5px;
+        font-size: 0.9rem;
+        transition: background-color 0.3s ease;
+
+        img {
+            width: 22px;
+            margin-right: 8px;
+            filter: var(--dark-invert);
         }
 
-        .project-links {
-            @include flex-center();
-            justify-content: start;
-            flex-wrap: wrap;
-            margin-top: 10px;
-
-            a {
-                @include flex-center();
-                padding: 6px 12px;
-                border-radius: 5px;
-                background: var(--accent-color);
-                color: var(--bg-color);
-                margin-right: 10px;
-                margin-bottom: 5px;
-                font-size: 0.9rem;
-                transition: background-color 0.3s ease;
-
-                img {
-                    width: 22px;
-                    margin-right: 8px;
-                    filter: var(--dark-invert);
-                }
-
-                &:hover {
-                    opacity: 0.85;
-                }
-            }
+        &:hover {
+            opacity: 0.85;
         }
+    }
+}
+
+.project-stack {
+    @include flex-center();
+    justify-content: start;
+    flex-wrap: wrap;
+
+    li,
+    span {
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-right: 10px;
+        margin-bottom: 5px;
+        display: flex;
+        align-items: center;
+        color: var(--accent-color);
     }
 }
 
@@ -796,6 +840,7 @@ button {
 
     img {
         width: 100%;
+        border: 2px solid var(--accent-color);
         border-radius: 60px 60px 10px 10px;
         display: block;
         object-fit: cover;
@@ -852,16 +897,140 @@ button {
     transform: rotate(45deg) scale(1);
 }
 
+// --- Project card actions (CTA + links, in the description) --------------
+
+.project-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    margin-top: 20px;
+}
+
+.project-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 32px;
+    background: var(--secondary-color);
+    color: #fff;
+    font-family: var(--secondary-font);
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    border-radius: 999px 999px 8px 8px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+    transition: background 250ms ease, transform 250ms ease;
+}
+
+.project-cta:hover,
+.project-cta:focus-visible {
+    background: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+.project-cta--ghost {
+    background: transparent;
+    border: 2px solid var(--secondary-color);
+    color: var(--secondary-color);
+}
+
+.project-cta--ghost:hover,
+.project-cta--ghost:focus-visible {
+    background: var(--secondary-color);
+    color: #fff;
+}
+
+// Hover doesn't exist on touch devices — show the CTA statically instead
+// of hiding it behind a gesture nobody can perform.
+@media (hover: none) {
+    .project-overlay {
+        position: static;
+        opacity: 1;
+        pointer-events: auto;
+        background: transparent;
+        border-radius: 0;
+        padding: 16px 0 0;
+    }
+
+    .project-cta {
+        transform: none;
+    }
+
+    .project-links--overlay a {
+        background: rgba(0, 0, 0, 0.06);
+        color: var(--text-color);
+
+        img {
+            filter: var(--dark-invert);
+        }
+    }
+}
+
 @media screen and (max-width: 1024px) {
+    #projects {
+        max-width: 100%;
+
+        .project-actions {
+            align-items: center;
+            justify-content: center;
+        }
+
+        .projects-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            max-width: 100%;
+            margin: 0;
+            gap: 0;
+            overflow: visible;
+
+            .project,
+            .project:nth-child(2n) {
+                width: 100%;
+                max-width: 700px;
+                flex-direction: column;
+                text-align: center;
+                padding: 10px;
+                margin: 20px auto;
+                gap: 10px;
+
+                img {
+                    width: 100%;
+                    max-width: 100%;
+                    margin: 0;
+                    filter: none;
+                }
+
+                h4 {
+                    font-size: 1.2rem;
+                }
+
+                .project-stack {
+                    justify-content: center;
+                }
+
+                .project-links {
+                    @include flex-center();
+
+                    a {
+                        img {
+                            width: 22px;
+                            margin-right: 8px;
+                            filter: var(--dark-invert);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     .project-frame img {
         border-radius: 40px 40px 8px 8px;
     }
 }
 
 @media screen and (max-width: 768px) {
-    .sand-divider {
-        height: 140px;
-    }
 
     .project-frame img {
         border-radius: 28px 28px 6px 6px;
@@ -870,6 +1039,30 @@ button {
     .project-corner {
         width: 16px;
         height: 16px;
+    }
+
+
+
+    .project::before {
+        display: none;
+    }
+
+    #projects {
+        gap: 0;
+        margin-top: 50px;
+
+        .projects-container {
+            .project {
+                background: var(--back-wave);
+                border-radius: 10px;
+                margin: 0;
+
+                h3 {
+                    font-size: 1.5rem;
+                    margin-bottom: 15px;
+                }
+            }
+        }
     }
 }
 
@@ -1347,58 +1540,6 @@ footer .lang-toggle {
         }
     }
 
-    #projects {
-        max-width: 100%;
-
-        .projects-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            max-width: 100%;
-            margin: 0;
-            gap: 0;
-            overflow: visible;
-
-            .project,
-            .project:nth-child(2n) {
-                width: 100%;
-                max-width: 700px;
-                flex-direction: column;
-                text-align: center;
-                padding: 10px;
-                margin: 20px auto;
-                gap: 10px;
-
-                img {
-                    width: 100%;
-                    max-width: 100%;
-                    margin: 0;
-                    filter: none;
-                }
-
-                h4 {
-                    font-size: 1.2rem;
-                }
-
-                .project-stack {
-                    justify-content: center;
-                }
-
-                .project-links {
-                    @include flex-center();
-
-                    a {
-                        img {
-                            width: 22px;
-                            margin-right: 8px;
-                            filter: var(--dark-invert);
-                        }
-                    }
-                }
-            }
-        }
-    }
 
     .contact-grid {
         flex-direction: column-reverse;
@@ -1455,27 +1596,6 @@ footer .lang-toggle {
         line-height: 1.9rem;
     }
 
-    .project::before {
-        display: none;
-    }
-
-    #projects {
-        gap: 0;
-        margin-top: 50px;
-
-        .projects-container {
-            .project {
-                background: var(--back-wave);
-                border-radius: 10px;
-                margin: 0;
-
-                h3 {
-                    font-size: 1.5rem;
-                    margin-bottom: 15px;
-                }
-            }
-        }
-    }
 
     .contact-grid {
         padding: 10px;
@@ -1551,5 +1671,456 @@ footer .lang-toggle {
 
     .contact-info h3 {
         font-size: 2.2rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// --- Case study page -------------------------------------------------------
+
+.case-study {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 80px 20px 80px;
+}
+
+.case-study-back {
+    display: inline-block;
+    margin-bottom: 30px;
+    color: var(--secondary-color);
+    font-family: var(--secondary-font);
+    letter-spacing: 1px;
+    font-weight: 600;
+    padding: 10px;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.case-study-hero {
+    position: relative;
+    margin-bottom: 40px;
+
+    img {
+        width: 100%;
+        border-radius: 60px 60px 10px 10px;
+        display: block;
+        object-fit: cover;
+    }
+}
+
+.case-study-title {
+    font-family: var(--secondary-font);
+    font-size: 2.6rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.case-study-stack {
+    justify-content: flex-start;
+    margin-bottom: 20px;
+
+    li {
+        color: var(--accent-color);
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        margin-right: 12px;
+    }
+}
+
+.case-study-text {
+    font-family: var(--paragraph-font);
+    font-size: 1.15rem;
+    line-height: 2rem;
+    margin-bottom: 30px;
+    padding-left: 20px;
+    border-left: 5px solid var(--secondary-color);
+}
+
+@media screen and (max-width: 768px) {
+    .case-study-hero img {
+        border-radius: 28px 28px 6px 6px;
+    }
+
+    .case-study-title {
+        font-size: 2rem;
+    }
+}
+
+
+// --- Case study page — additions ------------------------------------------
+// Reuses the site's tokens (var(--primary-color), var(--scroll-bg-light/dark),
+// zellige corner accents) instead of introducing a second visual system.
+
+.case-study-tagline {
+    font-family: var(--paragraph-font);
+    font-size: 1.15rem;
+    color: var(--secondary-color);
+    margin: 10px 0 20px 0;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.case-study-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin: 40px 0;
+    padding: 30px 0;
+    border-top: 1px solid var(--scroll-shadow);
+    border-bottom: 1px solid var(--scroll-shadow);
+
+    &-col {
+        text-align: justify;
+
+        h4 {
+            font-family: var(--secondary-font);
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        p {
+            font-family: var(--paragraph-font);
+            font-size: 1.05rem;
+            line-height: 1.8rem;
+        }
+    }
+}
+
+.case-study-block {
+    margin: 60px 0;
+}
+
+.case-study-block-title {
+    font-family: var(--secondary-font);
+    color: var(--primary-color);
+    font-size: 1.7rem;
+    margin-bottom: 25px;
+}
+
+// Tech stack, grouped by layer.
+.case-study-tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.case-study-tech-card {
+    position: relative;
+    background: var(--bg-color);
+    box-shadow: inset 0 0 0 2px var(--scroll-shadow);
+    border-radius: 12px;
+    padding: 20px;
+
+    &-corner {
+        position: absolute;
+        top: -8px;
+        left: 20px;
+        width: 16px;
+        height: 16px;
+        border: 3px solid var(--secondary-color);
+        background: var(--accent-color);
+        transform: rotate(45deg);
+    }
+
+    h5 {
+        font-family: var(--secondary-font);
+        color: var(--accent-color);
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 12px;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    li {
+        font-family: var(--paragraph-font);
+        font-size: 0.95rem;
+    }
+}
+
+.case-study-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.case-study-feature {
+    background: linear-gradient(to right, var(--scroll-bg-light), var(--scroll-bg-dark));
+    box-shadow: inset 0 0 0 2px var(--scroll-shadow), 0 6px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 14px;
+    padding: 22px;
+
+    h5 {
+        font-family: var(--secondary-font);
+        color: var(--primary-color);
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+    }
+
+    p {
+        font-family: var(--paragraph-font);
+        font-size: 0.95rem;
+        line-height: 1.6rem;
+        color: #000;
+    }
+}
+
+// Screenshot gallery
+.case-study-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.case-study-gallery-item {
+    position: relative;
+
+    img,
+    .case-study-gallery-placeholder {
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
+        border: 2px solid var(--accent-color);
+        border-radius: 20px 20px 6px 6px;
+        display: block;
+    }
+
+    .case-study-gallery-placeholder {
+        background: var(--middle-wave);
+        @include flex-center();
+
+        &::after {
+            content: "screenshot pending";
+            font-family: var(--paragraph-font);
+            font-size: 0.85rem;
+            color: var(--text-color);
+            opacity: 0.5;
+        }
+    }
+
+    figcaption {
+        font-family: var(--paragraph-font);
+        font-size: 0.9rem;
+        margin-top: 10px;
+        color: var(--text-color);
+        opacity: 0.8;
+    }
+}
+
+.case-study-status {
+    margin: 50px 0;
+    padding: 25px 30px;
+    border-left: 4px solid var(--secondary-color);
+
+    h5 {
+        font-family: var(--secondary-font);
+        color: var(--primary-color);
+        font-size: 1.1rem;
+        margin-bottom: 12px;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    li {
+        font-family: var(--paragraph-font);
+        font-size: 0.95rem;
+        line-height: 1.5rem;
+    }
+}
+
+.case-study-links {
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .case-study-split {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+}
+
+
+// --- Journey / timeline -----------------------------------------------------
+// A caravan-style route through the build, styled with the same zellige
+// marker used elsewhere (.case-study-tech-card-corner) rather than a new
+// motif — waypoints, not a generic numbered list.
+
+.case-study-journey-line {
+    position: relative;
+    margin-top: 6px;
+    padding-left: 34px;
+    border-left: 2px dashed var(--scroll-shadow);
+}
+
+.case-study-journey-step {
+    position: relative;
+    padding-bottom: 42px;
+
+    &:last-child {
+        padding-bottom: 0;
+    }
+}
+
+.case-study-journey-marker {
+    position: absolute;
+    left: -43px;
+    top: 3px;
+    width: 15px;
+    height: 15px;
+    border: 3px solid var(--secondary-color);
+    background: var(--accent-color);
+    transform: rotate(45deg);
+}
+
+.case-study-journey-label {
+    display: block;
+    font-family: var(--paragraph-font);
+    font-size: 0.78rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    margin-bottom: 6px;
+}
+
+.case-study-journey-step {
+    h5 {
+        font-family: var(--secondary-font);
+        color: var(--accent-color);
+        font-size: 1.1rem;
+        margin-bottom: 6px;
+    }
+
+    p {
+        font-family: var(--paragraph-font);
+        font-size: 0.97rem;
+        line-height: 1.75rem;
+        max-width: 580px;
+        color: var(--text-color);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .case-study-journey-line {
+        padding-left: 26px;
+    }
+
+    .case-study-journey-marker {
+        left: -35px;
+    }
+}
+
+
+// --- Scroll reveal -----------------------------------------------------------
+// Applied via .case-study-reveal in the component; toggled to .in-view by an
+// IntersectionObserver. Grid children get a slight stagger so groups arrive
+// as a ripple rather than all at once.
+
+.case-study-reveal {
+    opacity: 0;
+    transform: translateY(26px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+
+    &.in-view {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .case-study-reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+.case-study-tech-grid .case-study-tech-card,
+.case-study-features .case-study-feature,
+.case-study-gallery .case-study-gallery-item {
+    &:nth-child(1) {
+        transition-delay: 0.05s;
+    }
+
+    &:nth-child(2) {
+        transition-delay: 0.12s;
+    }
+
+    &:nth-child(3) {
+        transition-delay: 0.19s;
+    }
+
+    &:nth-child(4) {
+        transition-delay: 0.26s;
+    }
+
+    &:nth-child(5) {
+        transition-delay: 0.33s;
+    }
+
+    &:nth-child(6) {
+        transition-delay: 0.4s;
+    }
+}
+
+.case-study-journey-step {
+    &:nth-child(1) {
+        transition-delay: 0.03s;
+    }
+
+    &:nth-child(2) {
+        transition-delay: 0.06s;
+    }
+
+    &:nth-child(3) {
+        transition-delay: 0.09s;
+    }
+
+    &:nth-child(4) {
+        transition-delay: 0.12s;
+    }
+
+    &:nth-child(5) {
+        transition-delay: 0.15s;
+    }
+
+    &:nth-child(6) {
+        transition-delay: 0.18s;
+    }
+
+    &:nth-child(7) {
+        transition-delay: 0.21s;
+    }
+
+    &:nth-child(8) {
+        transition-delay: 0.24s;
     }
 }

@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import Footer from "./components/Footer";
 import Hero from "./components/hero/Hero";
 import sun from "./assets/img/sun.svg";
 import moon from "./assets/img/moon.svg";
 import About from "./components/About";
 import Projects from "./components/Projects";
+import ProjectCaseStudy from "./components/ProjectCaseStudy";
 import Contact from "./components/Contact";
 import Career from "./components/Career";
 import { useGoogleAnalytics } from "./analytics";
@@ -50,22 +52,41 @@ function App() {
           />
         </div>
       </button>
-      <Hero />
-      <main>
-        <div
-          style={{
-            background: "var(--bg-color)",
-          }}
-        >
-          <About />
-          <Career />
-        </div>
-        <div style={{ background: "var(--sky)" }}>
-          <Projects isDarkMode={isDarkMode} />
-          <Contact />
-          <Footer />
-        </div>
-      </main>
+
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Hero />
+              <main>
+                <div
+                  style={{
+                    background: "var(--bg-color)",
+                  }}
+                >
+                  <About />
+                  <Career />
+                </div>
+                <div style={{ background: "var(--sky)" }}>
+                  <Projects isDarkMode={isDarkMode} />
+                  <Contact />
+                  <Footer />
+                </div>
+              </main>
+            </>
+          }
+        />
+        <Route
+          path="/projects/:slug"
+          element={
+            <main>
+              <ProjectCaseStudy />
+              <Footer />
+            </main>
+          }
+        />
+      </Routes>
     </SmoothScroll>
   );
 }

@@ -69,20 +69,267 @@
         "list": [
             {
                 "name": "Dar'Loca",
+                "slug": "darloca",
+                "tagline": "A car rental management, built for how Moroccan agencies actually work.",
                 "text": "A full-featured platform for car rental businesses, including bookings, invoices, dashboards and more.",
+                "studyText": "Most car rental agencies in Morocco run on a mix of WhatsApp, paper contracts and a shared Excel sheet, no shared view of which car is out, which contract is expiring, or which client just walked in twice under two different names. Dar'Loca is a self-hosted SaaS platform I designed and built end to end, frontend, backend, infrastructure and deployment, to replace that with one system an agency actually runs its day from.",
+                "challenge": "Agencies needed something that fit their existing paperwork-heavy, French-language workflow, not a generic fleet-management tool built for a different market. Contracts had to look and print the way a client already expected. Client identity had to be captured reliably from ID cards and passports, by staff who won't type long forms during a handover. And the whole thing had to run reliably on a single low-cost server, not a cloud stack an agency owner would never be able to afford or manage.",
+                "solution": "I built the fleet planner around drag-to-create bookings so an agency can go from calendar to signed contract in a few clicks, added camera-based ID scanning that reads Moroccan CIN cards, passports and EU ID cards and fills the client form automatically, and wired electronic signature capture with an IP and geolocation audit trail so contracts hold up as evidence. The whole platform runs on a single VPS I manage myself, Nginx, PM2, PostgreSQL, which keeps hosting costs low enough that the economics work for a small agency.",
                 "stack": [
                     "React",
                     "Express",
                     "Node.js",
                     "PostgreSQL"
                 ],
+                "journey": [
+                    {
+                        "label": "Setting out",
+                        "title": "Architecture built for one server",
+                        "description": "A split-domain deploy, a public marketing site and a separate authenticated app, running on a single self-hosted VPS with role-based access and a French-first interface from day one."
+                    },
+                    {
+                        "label": "First stop",
+                        "title": "The fleet planner",
+                        "description": "Interactive calendars, containing contracts and bookings arranged, with document-expiry events surfaced right alongside them."
+                    },
+                    {
+                        "label": "Next stop",
+                        "title": "Trust at the counter",
+                        "description": "Camera-based ID scanning, OCR plus AI extraction, reads Moroccan CIN cards, passports and EU ID cards and fills the client form automatically, no re-typing at handover."
+                    },
+                    {
+                        "label": "Next stop",
+                        "title": "Paper, made digital",
+                        "description": "On-screen signatures with an IP and geolocation audit trail, and print-ready contracts generated server-side to match the paperwork agencies already hand clients."
+                    },
+                    {
+                        "label": "Next stop",
+                        "title": "The owner's view",
+                        "description": "A widget-based dashboard, drag-to-rearrange and saved per user, summarising fleet status, upcoming returns and revenue at a glance."
+                    },
+                    {
+                        "label": "Next stop",
+                        "title": "Fleet, live",
+                        "description": "Self-hosted GPS tracking layered on top of the fleet: live positions on a map, and remote engine cutoff enforced server-side as a safety rule, never left to the client."
+                    },
+                    {
+                        "label": "Next stop",
+                        "title": "Control tower",
+                        "description": "A superadmin panel for managing every agency's subscription, reviewing demo requests, and auditing activity across agencies, the layer that lets one person run the whole platform."
+                    },
+                    {
+                        "label": "Still going",
+                        "title": "Onward",
+                        "description": "A backup/restore system with per-user data isolation is in place, and current work is a new-user onboarding checklist and a refined ID-scanning flow."
+                    }
+                ],
+                "techGroups": [
+                    {
+                        "category": "Frontend",
+                        "items": [
+                            "React + Vite",
+                            "SCSS with a per-component architecture (@use/@forward)",
+                            "Swiper, IntersectionObserver, GA4"
+                        ]
+                    },
+                    {
+                        "category": "Backend",
+                        "items": [
+                            "Node.js + Express",
+                            "PostgreSQL"
+                        ]
+                    },
+                    {
+                        "category": "Fleet tracking",
+                        "items": [
+                            "Self-hosted Traccar (Docker)",
+                            "Teltonika GPS hardware over M2M SIM",
+                            "Leaflet live map, server-enforced engine cutoff"
+                        ]
+                    },
+                    {
+                        "category": "Infrastructure",
+                        "items": [
+                            "Self-hosted on a VPS",
+                            "Nginx (HTTP/2, security headers, reverse proxy)",
+                            "PM2 process management",
+                            "Dodo Payments for subscription billing, in MAD"
+                        ]
+                    }
+                ],
+                "features": [
+                    {
+                        "title": "Live GPS tracking",
+                        "description": "Real-time fleet positions on a map, with remote engine cutoff enforced on the server as a safety-critical rule."
+                    },
+                    {
+                        "title": "Fleet planner",
+                        "description": "A drag-to-create calendar for bookings, with document-expiry events and multi-event popups so nothing about a vehicle's status gets missed."
+                    },
+                    {
+                        "title": "ID scanning",
+                        "description": "Point a camera at a CIN, passport or EU ID card and the client form fills itself, OCR plus AI extraction instead of manual typing at the counter."
+                    },
+                    {
+                        "title": "Electronic signatures",
+                        "description": "Contracts are signed on-screen, with IP and geolocation logged against every signature for an audit trail."
+                    },
+                    {
+                        "title": "Print-ready contracts",
+                        "description": "Two print layouts generated server-side as real PDFs, matching the paperwork agencies already hand clients today."
+                    },
+                    {
+                        "title": "Owner dashboard",
+                        "description": "A widget-based dashboard, drag-to-rearrange, saved per user, summarising fleet status, upcoming returns and revenue."
+                    },
+                    {
+                        "title": "Platform admin",
+                        "description": "A superadmin panel to manage subscriptions, demo requests and activity logs across every agency on the platform."
+                    },
+                    {
+                        "title": "Backup & recovery",
+                        "description": "A backup/restore system with per-user data isolation, so an agency's data is never at the mercy of a single server incident."
+                    }
+                ],
+                "screenshots": [
+                    {
+                        "caption": "The interactive fleet planner calendar "
+                    },
+                    {
+                        "caption": "ID card scanner, camera capture with the guided crop overlay"
+                    },
+                    {
+                        "caption": "Live GPS map showing a vehicle in transit"
+                    },
+                    {
+                        "caption": "The owner dashboard with its widget layout"
+                    },
+                    {
+                        "caption": "A completed contract in the V4 print layout"
+                    }
+                ],
+                "status": {
+                    "label": "Where it stands today",
+                    "items": [
+                        "Live in production on a self-hosted VPS, serving real agency clients",
+                        "Built and designed with an agency owner who uses it daily",
+                        "Actively expanding, current work includes a new-user onboarding checklist and refining the ID-scanning flow"
+                    ]
+                },
                 "links": {
                     "live": "https://darloca.com"
                 }
             },
             {
+                "name": "Infinite Padel Courts",
+                "slug": "padel",
+                "tagline": "A dated construction site rebuilt into an interactive, made-to-measure experience.",
+                "text": "Custom 3D configurator and full redesign for a padel court construction company.",
+                "studyText": "Infinite Padel Courts came to me with a site that looked like most others in the construction space: stock photography, generic layouts, and 3D renders pulled from unrelated sources that didn't actually represent their work. I rebuilt the site from the ground up and replaced the visual identity entirely, modeling realistic court mockups in Blender under their own name, then built an interactive 3D court configurator on top of that so visitors could actually picture what they'd be buying.",
+                "challenge": "Construction and sports-facility clients want to see the finished product before they commit, but padel courts have dozens of configurable variables: surface, wall height, lighting, fencing, cover type. A static gallery couldn't show that, and the existing renders weren't even Infinite Padel's own work. The configurator also had to work for non-technical visitors on both desktop and mobile, with no sign-up friction, since most visitors are evaluating, not yet ready to register.",
+                "solution": "I modeled a library of realistic, on-brand court mockups in Blender to replace the generic renders, then built a lightweight 3D configurator on top using Three.js, letting visitors swap surfaces, colors and structural options in real time with no account required. I rebuilt the rest of the site's layout and interaction design around that centerpiece, and made sure every part of it, configurator included, held up on mobile, not just desktop.",
+                "stack": [
+                    "WordPress",
+                    "Three.js",
+                    "JavaScript",
+                    "Elementor"
+                ],
+                "journey": [
+                    {
+                        "label": "Starting point",
+                        "title": "An outdated, generic site",
+                        "description": "Stock construction imagery and 3D renders that weren't even Infinite Padel's own work, on a layout that didn't reflect the quality of what they build."
+                    },
+                    {
+                        "label": "First stop",
+                        "title": "Real renders, their own",
+                        "description": "A library of realistic court mockups modeled in Blender specifically for their brand, replacing every generic image on the site."
+                    },
+                    {
+                        "label": "Next stop",
+                        "title": "The configurator",
+                        "description": "An interactive 3D padel court builder using Three.js, no sign-up required, letting visitors adjust surface, structure and finish and see it change instantly."
+                    },
+                    {
+                        "label": "Next stop",
+                        "title": "Full redesign",
+                        "description": "A rebuilt layout and interaction design across the whole site, tuned to feel current rather than templated."
+                    },
+                    {
+                        "label": "Still going",
+                        "title": "Desktop and mobile parity",
+                        "description": "Every section, including the configurator, rebuilt to perform and feel right on mobile, not just scaled down from desktop."
+                    }
+                ],
+                "techGroups": [
+                    {
+                        "category": "3D & Configurator",
+                        "items": [
+                            "Three.js scene and interaction logic",
+                            "Custom court models rendered in Blender",
+                            "No-signup, lightweight client-side configurator"
+                        ]
+                    },
+                    {
+                        "category": "Site & CMS",
+                        "items": [
+                            "WordPress + Elementor",
+                            "Custom JavaScript for interactive sections",
+                            "Responsive rebuild for desktop and mobile"
+                        ]
+                    }
+                ],
+                "features": [
+                    {
+                        "title": "3D court configurator",
+                        "description": "An interactive, no-sign-up tool for customizing a padel court's surface, structure and finish in real time."
+                    },
+                    {
+                        "title": "Original 3D mockups",
+                        "description": "A full set of realistic court renders modeled in Blender under Infinite Padel's own name, replacing stock imagery."
+                    },
+                    {
+                        "title": "Full visual redesign",
+                        "description": "A rebuilt layout and interaction design across the entire site to match the quality of the company's actual work."
+                    },
+                    {
+                        "title": "Mobile-first interactivity",
+                        "description": "The configurator and every interactive section rebuilt to work smoothly on mobile, not just desktop."
+                    }
+                ],
+                "screenshots": [
+                    {
+                        "caption": "The 3D court configurator in use"
+                    },
+                    {
+                        "caption": "A Blender-rendered court mockup"
+                    },
+                    {
+                        "caption": "The redesigned homepage"
+                    },
+                    {
+                        "caption": "Mobile view of the configurator"
+                    }
+                ],
+                "status": {
+                    "label": "Where it stands today",
+                    "items": [
+                        "Live in production at infinitepadelcourts.com",
+                        "Configurator used directly by prospective clients during evaluation, no account needed"
+                    ]
+                },
+                "links": {
+                    "live": "https://infinitepadelcourts.com"
+                }
+            },
+            {
                 "name": "SimoLimo",
+                "slug": "simolimo",
+                "tagline": "A luxury booking experience for a Denver limousine company, built for an owner-operator.",
                 "text": "Luxury limousine and premium car booking website for a Denver-based transportation company.",
+                "studyText": "SimoLimo is built for an individual running his own luxury transportation business, someone who needed a site that could stand in for a full sales team: it had to look as premium as the cars themselves, make booking effortless for clients, and give him a direct, simple way to be contacted, without any of the overhead of managing a larger platform.",
+                "challenge": "In the luxury transportation space, the website is often the first and only impression a client gets before booking a car worth six figures. It needed to feel high-end without feeling cold or corporate, since the business is run by one person, not a fleet company. On top of that, booking and contact had to be frictionless for clients who are often booking last-minute, from a phone, for an airport run or an event.",
+                "solution": "I designed the site around a restrained, premium visual language, dark tones, strong photography, generous spacing, that reads as luxury without needing heavy ornamentation. I built an easy online booking flow alongside direct contact options, so a client can either book in a couple of steps or reach out to the owner directly, whichever fits the situation.",
                 "stack": [
                     "WordPress",
                     "Elementor",
@@ -90,32 +337,169 @@
                     "JavaScript",
                     "CSS3"
                 ],
+                "journey": [
+                    {
+                        "label": "Starting point",
+                        "title": "One owner, one site",
+                        "description": "A single-operator luxury transport business that needed a site to do the work of a sales team."
+                    },
+                    {
+                        "label": "First stop",
+                        "title": "A luxury visual identity",
+                        "description": "Dark, premium styling and strong photography built to match the caliber of the cars being booked."
+                    },
+                    {
+                        "label": "Next stop",
+                        "title": "Easy online booking",
+                        "description": "A streamlined booking flow built with Fluent Forms, designed to be filled out quickly, especially from a phone."
+                    },
+                    {
+                        "label": "Still going",
+                        "title": "Direct contact, kept simple",
+                        "description": "Clear, always-visible ways to reach the owner directly for clients who'd rather talk than fill out a form."
+                    }
+                ],
+                "techGroups": [
+                    {
+                        "category": "Site & Booking",
+                        "items": [
+                            "WordPress + Elementor",
+                            "Fluent Forms for online booking and contact",
+                            "Custom JavaScript and CSS for the luxury visual styling"
+                        ]
+                    }
+                ],
+                "features": [
+                    {
+                        "title": "Online booking",
+                        "description": "A simple, fast booking flow so clients can reserve a car directly from the site."
+                    },
+                    {
+                        "title": "Direct contact options",
+                        "description": "Clear paths to reach the owner directly, built for clients who prefer to book by phone or message."
+                    },
+                    {
+                        "title": "Luxury visual design",
+                        "description": "A dark, premium aesthetic built around strong photography, matching the quality of the fleet."
+                    }
+                ],
+                "screenshots": [
+                    {
+                        "caption": "The homepage hero"
+                    },
+                    {
+                        "caption": "The online booking flow"
+                    },
+                    {
+                        "caption": "The fleet showcase"
+                    }
+                ],
+                "status": {
+                    "label": "Where it stands today",
+                    "items": [
+                        "Live in production at simolimo.net",
+                        "Used directly by the owner to take bookings and client inquiries"
+                    ]
+                },
                 "links": {
                     "live": "https://simolimo.net"
                 }
             },
             {
-                "name": "Infinite Padel Courts",
-                "text": "Custom 3D configurator and redesign for a padel court construction company.",
-                "stack": [
-                    "WordPress",
-                    "Three.js",
-                    "JavaScript",
-                    "Elementor"
-                ],
-                "links": {
-                    "live": "https://infinitepadelcourts.com"
-                }
-            },
-            {
                 "name": "Infinite Sport",
-                "text": "A modern, responsive website for a company that builds gyms and wellness spaces.",
+                "slug": "sport",
+                "tagline": "A motivating storefront and site for a company building MMA, gyms and stadium courts.",
+                "text": "A modern, responsive website with an integrated online store for a company that builds gyms and wellness spaces.",
+                "studyText": "Infinite Sport builds physical sports infrastructure, MMA and boxing rings, padel courts, football pitches, outdoor and stadium installations, and needed a site with the same energy as what they build. Beyond the marketing site, they needed a working WooCommerce store where some products aren't one-size-fits-all: certain items needed to be customizable by the customer before purchase, plus CRM integration to actually capture and follow up on leads.",
+                "challenge": "A construction/equipment company selling across several very different sport categories risks feeling generic if the site treats every product the same way. The site needed to feel motivating and energetic rather than corporate, while still functioning as a real e-commerce store. Some products couldn't just be sold as-is: customers needed to configure them before checkout, which standard WooCommerce doesn't handle out of the box. And leads coming through the site needed to flow into their CRM automatically, not get lost in an inbox.",
+                "solution": "I built the site with interactive, energetic elements to match the brand across all their sport categories, then integrated WooCommerce for the store itself. For the products that needed configuration, I wrote custom code on top of WooCommerce so customers could customize those items to their specs before adding them to cart. I also wired up CRM integration, including cookie-based tracking, so leads and orders coming through the site feed directly into their sales pipeline instead of needing manual follow-up.",
                 "stack": [
                     "WordPress",
+                    "WooCommerce",
                     "Elementor",
                     "CSS3",
                     "PHP"
                 ],
+                "journey": [
+                    {
+                        "label": "Starting point",
+                        "title": "Multiple sports, one identity",
+                        "description": "A company spanning MMA, boxing, padel, football and stadium construction that needed a site with real energy behind it."
+                    },
+                    {
+                        "label": "First stop",
+                        "title": "An interactive, motivating design",
+                        "description": "Layouts and interactive elements built to match the intensity of the sports the company builds for."
+                    },
+                    {
+                        "label": "Next stop",
+                        "title": "The WooCommerce store",
+                        "description": "A full online store integrated into the site for their sellable products and equipment."
+                    },
+                    {
+                        "label": "Next stop",
+                        "title": "Custom product configuration",
+                        "description": "Custom PHP built on top of WooCommerce so customers can configure specific products to their liking before checkout, something standard WooCommerce doesn't support."
+                    },
+                    {
+                        "label": "Still going",
+                        "title": "CRM-connected leads",
+                        "description": "CRM integration with cookie-based tracking, so leads and orders from the site flow straight into their sales pipeline."
+                    }
+                ],
+                "techGroups": [
+                    {
+                        "category": "Store & Commerce",
+                        "items": [
+                            "WooCommerce",
+                            "Custom PHP for per-product customization",
+                            "WordPress + Elementor"
+                        ]
+                    },
+                    {
+                        "category": "Sales & Tracking",
+                        "items": [
+                            "CRM integration for lead capture",
+                            "Cookie-based visitor tracking"
+                        ]
+                    }
+                ],
+                "features": [
+                    {
+                        "title": "Integrated online store",
+                        "description": "A full WooCommerce store for the company's sellable equipment and products."
+                    },
+                    {
+                        "title": "Customizable products",
+                        "description": "Custom-built configuration on select products, letting customers tailor items to their liking before purchase."
+                    },
+                    {
+                        "title": "CRM-connected leads",
+                        "description": "Cookie-based tracking and CRM integration so leads and orders flow directly into the sales pipeline."
+                    },
+                    {
+                        "title": "Interactive, energetic design",
+                        "description": "A layout and set of interactive elements built to feel motivating across all of the company's sport categories."
+                    }
+                ],
+                "screenshots": [
+                    {
+                        "caption": "The homepage with interactive elements"
+                    },
+                    {
+                        "caption": "A customizable product page"
+                    },
+                    {
+                        "caption": "The WooCommerce store"
+                    }
+                ],
+                "status": {
+                    "label": "Where it stands today",
+                    "items": [
+                        "Live in production at infinitesport.pro",
+                        "Store and CRM pipeline actively used to process orders and leads"
+                    ]
+                },
                 "links": {
                     "live": "https://infinitesport.pro"
                 }

@@ -1,26 +1,14 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import ProjectLinks from "./ProjectLinks";
 import { useTranslation } from "react-i18next";
 import SandDivider from "./SandDivider";
+import { useProjects } from "./useProjects";
 
-import project1 from "../assets/img/project1.png";
-import project2 from "../assets/img/project2.png";
-import project3 from "../assets/img/project3.png";
-import project4 from "../assets/img/project4.png";
-import project5 from "../assets/img/project5.png";
-import project6 from "../assets/img/project6.png";
-
-function Projects({ isDarkMode }) {
+function Projects() {
   const { t } = useTranslation();
-  const translatedProjects = t("projects.list", { returnObjects: true });
+  const projects = useProjects();
 
-  const images = [project2, project6, project1, project5, project3, project4];
-
-  const projects = translatedProjects.map((project, index) => ({
-    ...project,
-    mediaSrc: images[index],
-  }));
-  
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
@@ -33,7 +21,7 @@ function Projects({ isDarkMode }) {
           {projects.map((project, index) => (
             <div
               className={`project ${hoveredIndex === index ? "active" : ""}`}
-              key={index}
+              key={project.slug}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
@@ -54,10 +42,18 @@ function Projects({ isDarkMode }) {
                   ))}
                 </ul>
                 <p>{project.text}</p>
-                <h4>{t("projects.linkTitle")}</h4>
-                <ul className="project-links">
-                  <ProjectLinks links={project.links} />
-                </ul>
+
+                <div className="project-actions">
+                  <Link
+                    to={`/projects/${project.slug}`}
+                    className="project-cta"
+                  >
+                    {t("projects.viewCaseStudy", "View Case Study")}
+                  </Link>
+                  <ul className="project-links">
+                    <ProjectLinks links={project.links} />
+                  </ul>
+                </div>
               </div>
             </div>
           ))}

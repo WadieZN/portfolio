@@ -1,4 +1,3 @@
-// components/ProjectLinks.jsx
 import github from "../assets/img/github.svg";
 import linkIcon from "../assets/img/link.svg";
 import study from "../assets/img/school.svg";

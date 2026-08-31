@@ -69,15 +69,114 @@
         "list": [
             {
                 "name": "Dar'Loca",
-                "text": "Plateforme complète pour les entreprises de location : réservations, factures, tableaux de bord, etc.",
+                "tagline": "Une gestion de location de voitures pensée pour le quotidien des agences marocaines.",
+                "text": "La plupart des agences de location au Maroc fonctionnent avec WhatsApp, des contrats papier et un tableau Excel partagé — sans vue commune sur quelle voiture est sortie, quel contrat arrive à échéance, ou quel client s'est déjà présenté sous un autre nom. Dar'Loca est une plateforme SaaS auto-hébergée que j'ai conçue et développée de bout en bout — frontend, backend, infrastructure et déploiement — pour remplacer tout ça par un seul système sur lequel une agence fait tourner sa journée.",
+                "challenge": "Les agences avaient besoin d'un outil adapté à leur façon de travailler, en français et centrée sur le papier — pas d'un logiciel générique de gestion de flotte pensé pour un autre marché. Les contrats devaient garder l'apparence à laquelle un client s'attend déjà. L'identité des clients devait être saisie de façon fiable à partir de cartes d'identité et de passeports, par du personnel qui n'a pas le temps de remplir de longs formulaires pendant une remise de clés. Et le tout devait tourner de façon fiable sur un seul serveur à faible coût, pas une infrastructure cloud qu'un patron d'agence ne pourrait jamais gérer ou se permettre.",
+                "solution": "J'ai construit le planning de flotte autour de réservations créées par glisser-déposer, pour qu'une agence passe du calendrier au contrat signé en quelques clics. J'ai ajouté un scan de pièce d'identité par caméra qui lit les CIN marocaines, les passeports et les cartes d'identité européennes et remplit automatiquement la fiche client, et mis en place une signature électronique avec un journal d'audit IP et géolocalisation pour que les contrats fassent foi. La plateforme entière tourne sur un unique serveur DigitalOcean que je gère moi-même — Nginx, PM2, PostgreSQL — ce qui garde des coûts d'hébergement assez bas pour que le modèle économique fonctionne pour une petite agence.",
                 "stack": [
                     "React",
                     "Express",
                     "Node.js",
                     "PostgreSQL"
                 ],
+                "techGroups": [
+                    {
+                        "category": "Frontend",
+                        "items": [
+                            "React + Vite",
+                            "SCSS en architecture par composant (@use/@forward)",
+                            "Swiper, IntersectionObserver, GA4"
+                        ]
+                    },
+                    {
+                        "category": "Backend",
+                        "items": [
+                            "Node.js + Express",
+                            "PostgreSQL",
+                            "Génération de PDF côté serveur via le CLI Chrome"
+                        ]
+                    },
+                    {
+                        "category": "IA & capture de documents",
+                        "items": [
+                            "Google Cloud Vision (OCR)",
+                            "Google Gemini (extraction de champs structurés)",
+                            "Capture caméra sur mesure avec cadrage guidé"
+                        ]
+                    },
+                    {
+                        "category": "Infrastructure",
+                        "items": [
+                            "Auto-hébergé sur un VPS DigitalOcean",
+                            "Nginx (HTTP/2, en-têtes de sécurité, reverse proxy)",
+                            "Gestion des process avec PM2",
+                            "Facturation d'abonnement via Paddle"
+                        ]
+                    }
+                ],
+                "features": [
+                    {
+                        "title": "Planning de flotte",
+                        "description": "Un calendrier de réservations par glisser-déposer, avec les échéances de documents et des pop-ups multi-événements pour ne rien manquer sur l'état d'un véhicule."
+                    },
+                    {
+                        "title": "Scan de pièce d'identité",
+                        "description": "Il suffit de viser une CIN, un passeport ou une carte d'identité européenne avec la caméra pour que la fiche client se remplisse toute seule — OCR et extraction par IA plutôt que la saisie manuelle au comptoir."
+                    },
+                    {
+                        "title": "Signature électronique",
+                        "description": "Les contrats se signent à l'écran, avec l'IP et la géolocalisation enregistrées pour chaque signature."
+                    },
+                    {
+                        "title": "Contrats prêts à imprimer",
+                        "description": "Deux mises en page générées côté serveur en PDF, fidèles aux documents que les agences remettent déjà à leurs clients."
+                    },
+                    {
+                        "title": "Tableau de bord",
+                        "description": "Un tableau de bord à widgets — réorganisable par glisser-déposer, sauvegardé par utilisateur — qui résume l'état de la flotte, les retours à venir et le chiffre d'affaires."
+                    },
+                    {
+                        "title": "Sauvegarde & restauration",
+                        "description": "Un système de sauvegarde et restauration avec isolation des données par utilisateur, pour que les données d'une agence ne dépendent jamais d'un seul incident serveur."
+                    }
+                ],
+                "screenshots": [
+                    {
+                        "caption": "Le planning de flotte avec une réservation en cours de création"
+                    },
+                    {
+                        "caption": "Le scanner de pièce d'identité — capture caméra avec cadrage guidé"
+                    },
+                    {
+                        "caption": "Un contrat terminé dans la mise en page V4"
+                    },
+                    {
+                        "caption": "Le tableau de bord avec ses widgets"
+                    }
+                ],
+                "status": {
+                    "label": "Où en est le projet aujourd'hui",
+                    "items": [
+                        "En production sur un VPS auto-hébergé, utilisé par de vraies agences",
+                        "Conçu et développé avec le patron d'agence qui l'utilise au quotidien",
+                        "En développement continu — travail en cours sur une checklist d'accueil pour les nouveaux utilisateurs et l'amélioration du scan de pièce d'identité"
+                    ]
+                },
                 "links": {
                     "live": "https://darloca.com"
+                }
+            },
+            {
+                "name": "Infinite Padel Courts",
+                "text": "Configurateur 3D personnalisé et refonte pour une entreprise de construction de courts de padel.",
+                "stack": [
+                    "WordPress",
+                    "Three.js",
+                    "JavaScript",
+                    "Elementor"
+                ],
+                "links": {
+                    "live": "https://infinitepadelcourts.com"
                 }
             },
             {
@@ -92,19 +191,6 @@
                 ],
                 "links": {
                     "live": "https://simolimo.net"
-                }
-            },
-            {
-                "name": "Infinite Padel Courts",
-                "text": "Configurateur 3D personnalisé et refonte pour une entreprise de construction de courts de padel.",
-                "stack": [
-                    "WordPress",
-                    "Three.js",
-                    "JavaScript",
-                    "Elementor"
-                ],
-                "links": {
-                    "live": "https://infinitepadelcourts.com"
                 }
             },
             {
