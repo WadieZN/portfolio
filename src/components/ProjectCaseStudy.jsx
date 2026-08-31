@@ -69,7 +69,7 @@ function ProjectCaseStudy() {
   return (
     <section className="case-study" ref={rootRef}>
       <Link to="/" className="case-study-back">
-        {t("projects.backToProjects", "Back to projects")}
+        {t("common.backHome", "Back to home")}
       </Link>
 
       <div className="case-study-hero">

@@ -5,63 +5,66 @@
             "Designer",
             "Artiste 3D",
             "Développeur Frontend",
-            "Codeur Créatif",
+            "Creative Coder",
             "Spécialiste UI/UX"
         ]
     },
     "about": {
         "subtitle": "﴾ À propos de moi ﴿",
-        "title": "Un Développeur Marocain",
-        "description": "Je suis un développeur web passionné par la création de sites à la fois beaux et fluides. Depuis mes débuts dans ce domaine, j’ai développé un sens aigu du design, un goût pour le code propre, et une véritable obsession pour offrir la meilleure expérience utilisateur possible. Que ce soit pour du développement frontend, du design UI/UX ou du branding digital, j’adore transformer des idées en sites web complets et soignés. Pour moi, tout repose sur l’équilibre entre créativité et compétence technique, pour un résultat non seulement esthétique, mais aussi rapide, réactif et facile à utiliser."
+        "title": "Un développeur marocain",
+        "description": "Je suis développeur web et j’aime créer des sites qui sont à la fois impressionnants visuellement et fluides à utiliser. Depuis que je me suis lancé dans cet univers, j’ai développé un œil attentif pour le design, une vraie passion pour le code propre et une obsession pour offrir la meilleure expérience possible aux utilisateurs. Qu’il s’agisse de développement front-end, de design UI/UX ou de branding digital, j’aime transformer des idées en sites soignés et entièrement fonctionnels. Pour moi, tout repose sur le mélange entre créativité et compétences techniques, afin que le résultat final ne soit pas seulement beau, mais aussi rapide, responsive et facile à utiliser."
+    },
+    "common": {
+        "backHome": "Retour à l'accueil"
     },
     "career": {
-        "subtitle": "﴾ Carrière ﴿",
-        "title": "Une chronologie de mon parcours",
+        "subtitle": "﴾ Parcours ﴿",
+        "title": "Une chronologie qui retrace mon parcours",
         "timeline": [
             {
                 "id": "1",
                 "title": "Lycée",
                 "date": "2017 - 2020",
-                "description": "Études secondaires axées sur les matières générales."
+                "description": "Achèvement de mes études secondaires avec une orientation générale."
             },
             {
                 "id": "2",
                 "title": "Après le lycée",
                 "date": "2020 - 2021",
-                "description": "Développement personnel à travers la lecture et l’apprentissage autodidacte."
+                "description": "Une année consacrée au développement personnel à travers la lecture et l’apprentissage de la vie."
             },
             {
                 "id": "3",
                 "title": "Diplôme en informatique",
-                "date": "Octobre 2021 - Juillet 2023",
-                "description": "Obtention d’un diplôme avec une formation pratique."
+                "date": "2021 - juillet 2023",
+                "description": "Obtention d’un diplôme en informatique avec une formation technique pratique."
             },
             {
                 "id": "4",
                 "title": "Premier emploi",
-                "date": "Juin 2022 - Janvier 2025",
-                "description": "Assistant administratif au Tribunal de Première Instance."
+                "date": "2022 - janvier 2025",
+                "description": "Travail en tant qu’assistant administratif au Tribunal de première instance."
             },
             {
                 "id": "5",
-                "title": "Apprentissage autonome",
+                "title": "Autoformation",
                 "date": "2023 - 2024",
-                "description": "Une année dédiée à l’apprentissage indépendant du développement web."
+                "description": "Une année consacrée à l’apprentissage autonome du développement web full stack."
             },
             {
                 "id": "6",
                 "title": "Stage en développement web",
                 "date": "Mai 2024",
-                "description": "Stage de 4 mois dans une entreprise internationale."
+                "description": "Réalisation d’un stage de 4 mois au sein d’une entreprise internationale."
             },
             {
                 "id": "7",
                 "title": "Développeur freelance",
-                "date": "2024 - Présent",
+                "date": "2024 - Aujourd’hui",
                 "description": "Création de solutions web pour des clients à travers le monde."
             }
         ],
-        "description": "Mon parcours dans le développement web n’a pas vraiment commencé en classe. Il a commencé le jour où j’ai décidé d’apprendre par moi-même. J’ai toujours été curieux de comprendre comment les choses fonctionnent, et cette volonté de créer m’a poussé à réaliser des projets, à faire des erreurs, et à ne jamais cesser d’apprendre. En chemin, j’ai eu la chance de collaborer avec des personnes formidables partout dans le monde. Ces expériences m’ont non seulement rendu meilleur développeur, mais elles m’ont aussi appris à rester ouvert, à m’adapter et à voir les choses sous différents angles."
+        "description": "Mon parcours dans le développement web n’a pas vraiment commencé dans une salle de classe. Il a commencé lorsque j’ai décidé de me former par moi-même. J’ai toujours été curieux de comprendre comment les choses fonctionnent, et cette envie de créer m’a poussé à réaliser des projets, à faire des erreurs et à continuer d’apprendre. Au fil du temps, j’ai aussi eu la chance de collaborer avec des personnes formidables aux quatre coins du monde. Ces expériences ne m’ont pas seulement permis de devenir un meilleur développeur, elles m’ont également appris à rester ouvert, à m’adapter et à voir les choses sous différentes perspectives."
     },
     "projects": {
         "subtitle": "﴾ Projets ﴿",
@@ -69,22 +72,66 @@
         "list": [
             {
                 "name": "Dar'Loca",
-                "tagline": "Une gestion de location de voitures pensée pour le quotidien des agences marocaines.",
-                "text": "La plupart des agences de location au Maroc fonctionnent avec WhatsApp, des contrats papier et un tableau Excel partagé — sans vue commune sur quelle voiture est sortie, quel contrat arrive à échéance, ou quel client s'est déjà présenté sous un autre nom. Dar'Loca est une plateforme SaaS auto-hébergée que j'ai conçue et développée de bout en bout — frontend, backend, infrastructure et déploiement — pour remplacer tout ça par un seul système sur lequel une agence fait tourner sa journée.",
-                "challenge": "Les agences avaient besoin d'un outil adapté à leur façon de travailler, en français et centrée sur le papier — pas d'un logiciel générique de gestion de flotte pensé pour un autre marché. Les contrats devaient garder l'apparence à laquelle un client s'attend déjà. L'identité des clients devait être saisie de façon fiable à partir de cartes d'identité et de passeports, par du personnel qui n'a pas le temps de remplir de longs formulaires pendant une remise de clés. Et le tout devait tourner de façon fiable sur un seul serveur à faible coût, pas une infrastructure cloud qu'un patron d'agence ne pourrait jamais gérer ou se permettre.",
-                "solution": "J'ai construit le planning de flotte autour de réservations créées par glisser-déposer, pour qu'une agence passe du calendrier au contrat signé en quelques clics. J'ai ajouté un scan de pièce d'identité par caméra qui lit les CIN marocaines, les passeports et les cartes d'identité européennes et remplit automatiquement la fiche client, et mis en place une signature électronique avec un journal d'audit IP et géolocalisation pour que les contrats fassent foi. La plateforme entière tourne sur un unique serveur DigitalOcean que je gère moi-même — Nginx, PM2, PostgreSQL — ce qui garde des coûts d'hébergement assez bas pour que le modèle économique fonctionne pour une petite agence.",
+                "slug": "darloca",
+                "tagline": "Une solution de gestion de location de voitures, pensée pour la réalité des agences marocaines.",
+                "text": "Une plateforme complète pour les agences de location de voitures, avec réservations, contrats, factures, tableaux de bord et bien plus encore.",
+                "studyText": "La plupart des agences de location de voitures au Maroc fonctionnent avec un mélange de WhatsApp, de contrats papier et d’un fichier Excel partagé, sans vision centralisée des véhicules disponibles, des contrats qui arrivent à expiration ou des clients qui peuvent apparaître deux fois sous des noms différents. Dar'Loca est une plateforme SaaS auto-hébergée que j’ai conçue et développée de bout en bout — frontend, backend, infrastructure et déploiement — afin de remplacer tout cela par un seul système sur lequel une agence peut réellement gérer son activité au quotidien.",
+                "challenge": "Les agences avaient besoin d’un outil adapté à leur fonctionnement existant, largement basé sur le papier et en français, plutôt que d’un logiciel générique de gestion de flotte conçu pour un autre marché. Les contrats devaient avoir le même aspect et être imprimables de la manière à laquelle les clients sont habitués. L’identité des clients devait également pouvoir être enregistrée de manière fiable à partir des cartes d’identité et des passeports, par des employés qui n’ont pas le temps de remplir de longs formulaires lors de la remise du véhicule. Enfin, l’ensemble devait fonctionner de manière fiable sur un simple serveur à faible coût, et non sur une infrastructure cloud coûteuse et difficile à gérer pour un propriétaire d’agence.",
+                "solution": "J’ai conçu le planificateur de flotte autour d’un système de création de réservations par glisser-déposer, permettant à une agence de passer du calendrier au contrat signé en quelques clics. J’ai également ajouté un scan des pièces d’identité via caméra, capable de lire les cartes CIN marocaines, les passeports et les cartes d’identité européennes afin de remplir automatiquement le formulaire client. Enfin, j’ai intégré la signature électronique avec un historique d’audit comprenant l’adresse IP et la géolocalisation, afin de renforcer la valeur probante des contrats. L’ensemble de la plateforme fonctionne sur un seul VPS que je gère moi-même, avec Nginx, PM2 et PostgreSQL, ce qui maintient les coûts d’hébergement suffisamment bas pour qu’ils restent adaptés à une petite agence.",
                 "stack": [
                     "React",
                     "Express",
                     "Node.js",
                     "PostgreSQL"
                 ],
+                "journey": [
+                    {
+                        "label": "Départ",
+                        "title": "Une architecture pensée pour un seul serveur",
+                        "description": "Un déploiement sur domaines séparés, avec un site marketing public et une application authentifiée distincte, le tout fonctionnant sur un seul VPS auto-hébergé avec gestion des accès par rôles et une interface pensée en français dès le départ."
+                    },
+                    {
+                        "label": "Première étape",
+                        "title": "Le planificateur de flotte",
+                        "description": "Des calendriers interactifs permettant d’organiser contrats et réservations, avec les événements liés à l’expiration des documents affichés directement à leurs côtés."
+                    },
+                    {
+                        "label": "Étape suivante",
+                        "title": "La confiance au comptoir",
+                        "description": "Un scan des pièces d’identité par caméra combinant OCR et extraction par IA. Il lit les cartes CIN marocaines, les passeports et les cartes d’identité européennes et remplit automatiquement le formulaire client, sans nouvelle saisie lors de la remise du véhicule."
+                    },
+                    {
+                        "label": "Étape suivante",
+                        "title": "Le papier, version numérique",
+                        "description": "Des signatures à l’écran avec historique d’audit comprenant l’adresse IP et la géolocalisation, ainsi que des contrats prêts à être imprimés et générés côté serveur pour correspondre aux documents que les agences remettent déjà à leurs clients."
+                    },
+                    {
+                        "label": "Étape suivante",
+                        "title": "La vue du propriétaire",
+                        "description": "Un tableau de bord basé sur des widgets, réorganisables par glisser-déposer et sauvegardés pour chaque utilisateur, permettant de visualiser en un coup d’œil l’état de la flotte, les prochains retours et les revenus."
+                    },
+                    {
+                        "label": "Étape suivante",
+                        "title": "La flotte en temps réel",
+                        "description": "Un système de suivi GPS auto-hébergé ajouté à la flotte : positions en temps réel sur une carte et coupure moteur à distance appliquée côté serveur comme règle de sécurité, sans jamais être laissée à la charge du client."
+                    },
+                    {
+                        "label": "Étape suivante",
+                        "title": "La tour de contrôle",
+                        "description": "Un panneau superadmin permettant de gérer l’abonnement de chaque agence, de consulter les demandes de démonstration et d’auditer l’activité de l’ensemble des agences, la couche qui permet à une seule personne de gérer toute la plateforme."
+                    },
+                    {
+                        "label": "Toujours en cours",
+                        "title": "En avant",
+                        "description": "Un système de sauvegarde et de restauration avec isolation des données par utilisateur est en place. Le travail actuel porte sur une checklist d’intégration des nouveaux utilisateurs et sur l’amélioration du processus de scan des pièces d’identité."
+                    }
+                ],
                 "techGroups": [
                     {
                         "category": "Frontend",
                         "items": [
                             "React + Vite",
-                            "SCSS en architecture par composant (@use/@forward)",
+                            "SCSS avec une architecture par composant (@use/@forward)",
                             "Swiper, IntersectionObserver, GA4"
                         ]
                     },
@@ -92,74 +139,84 @@
                         "category": "Backend",
                         "items": [
                             "Node.js + Express",
-                            "PostgreSQL",
-                            "Génération de PDF côté serveur via le CLI Chrome"
+                            "PostgreSQL"
                         ]
                     },
                     {
-                        "category": "IA & capture de documents",
+                        "category": "Suivi de flotte",
                         "items": [
-                            "Google Cloud Vision (OCR)",
-                            "Google Gemini (extraction de champs structurés)",
-                            "Capture caméra sur mesure avec cadrage guidé"
+                            "Traccar auto-hébergé (Docker)",
+                            "Matériel GPS Teltonika via SIM M2M",
+                            "Carte Leaflet en temps réel, coupure moteur contrôlée côté serveur"
                         ]
                     },
                     {
                         "category": "Infrastructure",
                         "items": [
-                            "Auto-hébergé sur un VPS DigitalOcean",
+                            "Auto-hébergé sur un VPS",
                             "Nginx (HTTP/2, en-têtes de sécurité, reverse proxy)",
-                            "Gestion des process avec PM2",
-                            "Facturation d'abonnement via Paddle"
+                            "Gestion des processus avec PM2",
+                            "Dodo Payments pour la facturation des abonnements, en MAD"
                         ]
                     }
                 ],
                 "features": [
                     {
-                        "title": "Planning de flotte",
-                        "description": "Un calendrier de réservations par glisser-déposer, avec les échéances de documents et des pop-ups multi-événements pour ne rien manquer sur l'état d'un véhicule."
+                        "title": "Suivi GPS en temps réel",
+                        "description": "Positions de la flotte en temps réel sur une carte, avec coupure moteur à distance appliquée côté serveur comme règle de sécurité critique."
                     },
                     {
-                        "title": "Scan de pièce d'identité",
-                        "description": "Il suffit de viser une CIN, un passeport ou une carte d'identité européenne avec la caméra pour que la fiche client se remplisse toute seule — OCR et extraction par IA plutôt que la saisie manuelle au comptoir."
+                        "title": "Planificateur de flotte",
+                        "description": "Un calendrier permettant de créer des réservations par glisser-déposer, avec les événements d’expiration des documents et des fenêtres affichant plusieurs événements afin de ne rien manquer concernant l’état d’un véhicule."
                     },
                     {
-                        "title": "Signature électronique",
-                        "description": "Les contrats se signent à l'écran, avec l'IP et la géolocalisation enregistrées pour chaque signature."
+                        "title": "Scan des pièces d’identité",
+                        "description": "Il suffit de pointer une caméra vers une CIN, un passeport ou une carte d’identité européenne pour que le formulaire client se remplisse automatiquement grâce à l’OCR et à l’extraction par IA, sans saisie manuelle au comptoir."
+                    },
+                    {
+                        "title": "Signatures électroniques",
+                        "description": "Les contrats sont signés directement à l’écran, avec l’adresse IP et la géolocalisation enregistrées pour chaque signature afin de constituer un historique d’audit."
                     },
                     {
                         "title": "Contrats prêts à imprimer",
-                        "description": "Deux mises en page générées côté serveur en PDF, fidèles aux documents que les agences remettent déjà à leurs clients."
+                        "description": "Deux mises en page imprimables générées côté serveur sous forme de véritables PDF, correspondant aux documents que les agences remettent déjà à leurs clients."
                     },
                     {
-                        "title": "Tableau de bord",
-                        "description": "Un tableau de bord à widgets — réorganisable par glisser-déposer, sauvegardé par utilisateur — qui résume l'état de la flotte, les retours à venir et le chiffre d'affaires."
+                        "title": "Tableau de bord propriétaire",
+                        "description": "Un tableau de bord basé sur des widgets, réorganisables par glisser-déposer et sauvegardés pour chaque utilisateur, résumant l’état de la flotte, les prochains retours et les revenus."
                     },
                     {
-                        "title": "Sauvegarde & restauration",
-                        "description": "Un système de sauvegarde et restauration avec isolation des données par utilisateur, pour que les données d'une agence ne dépendent jamais d'un seul incident serveur."
+                        "title": "Administration de la plateforme",
+                        "description": "Un panneau superadmin permettant de gérer les abonnements, les demandes de démonstration et les journaux d’activité de toutes les agences présentes sur la plateforme."
+                    },
+                    {
+                        "title": "Sauvegarde et récupération",
+                        "description": "Un système de sauvegarde et de restauration avec isolation des données par utilisateur, afin que les données d’une agence ne dépendent jamais d’un seul incident serveur."
                     }
                 ],
                 "screenshots": [
                     {
-                        "caption": "Le planning de flotte avec une réservation en cours de création"
+                        "caption": "Le calendrier interactif du planificateur de flotte"
                     },
                     {
-                        "caption": "Le scanner de pièce d'identité — capture caméra avec cadrage guidé"
+                        "caption": "Le scanner de carte d’identité, avec capture caméra et guide de cadrage"
                     },
                     {
-                        "caption": "Un contrat terminé dans la mise en page V4"
+                        "caption": "La carte GPS en temps réel montrant un véhicule en déplacement"
                     },
                     {
-                        "caption": "Le tableau de bord avec ses widgets"
+                        "caption": "Le tableau de bord du propriétaire avec son système de widgets"
+                    },
+                    {
+                        "caption": "Un contrat finalisé dans la mise en page d’impression V4"
                     }
                 ],
                 "status": {
-                    "label": "Où en est le projet aujourd'hui",
+                    "label": "Où en est le projet aujourd’hui",
                     "items": [
-                        "En production sur un VPS auto-hébergé, utilisé par de vraies agences",
-                        "Conçu et développé avec le patron d'agence qui l'utilise au quotidien",
-                        "En développement continu — travail en cours sur une checklist d'accueil pour les nouveaux utilisateurs et l'amélioration du scan de pièce d'identité"
+                        "En production sur un VPS auto-hébergé, utilisé par de véritables agences",
+                        "Conçu et développé avec un propriétaire d’agence qui l’utilise quotidiennement",
+                        "En développement continu, avec notamment une checklist d’intégration des nouveaux utilisateurs et l’amélioration du processus de scan des pièces d’identité"
                     ]
                 },
                 "links": {
@@ -168,20 +225,114 @@
             },
             {
                 "name": "Infinite Padel Courts",
-                "text": "Configurateur 3D personnalisé et refonte pour une entreprise de construction de courts de padel.",
+                "slug": "padel",
+                "tagline": "Un site de construction vieillissant transformé en une expérience interactive et sur mesure.",
+                "text": "Configurateur 3D personnalisé et refonte complète pour une entreprise spécialisée dans la construction de terrains de padel.",
+                "studyText": "Infinite Padel Courts est arrivé avec un site qui ressemblait à beaucoup d’autres dans le secteur de la construction : photos génériques, mises en page classiques et rendus 3D provenant de sources sans rapport avec leur activité et ne représentant pas réellement leur travail. J’ai reconstruit le site de zéro et entièrement repensé son identité visuelle, en modélisant dans Blender des terrains réalistes sous leur propre marque, puis en construisant par-dessus un configurateur 3D interactif permettant réellement aux visiteurs de visualiser ce qu’ils allaient acheter.",
+                "challenge": "Les clients dans la construction et les infrastructures sportives veulent voir le produit final avant de s’engager, mais les terrains de padel comportent des dizaines de variables configurables : revêtement, hauteur des parois, éclairage, clôtures, type de couverture. Une galerie statique ne pouvait pas présenter ces possibilités, et les anciens rendus n’étaient même pas ceux d’Infinite Padel. Le configurateur devait également être accessible aux visiteurs non techniques sur ordinateur comme sur mobile, sans obligation de créer un compte, puisque la plupart des visiteurs sont encore en phase d’évaluation et ne sont pas prêts à s’inscrire.",
+                "solution": "J’ai modélisé dans Blender une bibliothèque de terrains réalistes et cohérents avec leur identité visuelle afin de remplacer les rendus génériques, puis j’ai construit un configurateur 3D léger avec Three.js. Les visiteurs peuvent ainsi modifier en temps réel les revêtements, les couleurs et les options structurelles, sans créer de compte. J’ai également reconstruit la mise en page et les interactions de l’ensemble du site autour de cette fonctionnalité centrale, en veillant à ce que chaque partie, configurateur compris, soit aussi performante et agréable sur mobile que sur ordinateur.",
                 "stack": [
                     "WordPress",
                     "Three.js",
                     "JavaScript",
                     "Elementor"
                 ],
+                "journey": [
+                    {
+                        "label": "Point de départ",
+                        "title": "Un site vieillissant et générique",
+                        "description": "Des images de construction génériques et des rendus 3D qui n’étaient même pas ceux d’Infinite Padel, dans une mise en page qui ne reflétait pas la qualité de leurs réalisations."
+                    },
+                    {
+                        "label": "Première étape",
+                        "title": "De vrais rendus, les leurs",
+                        "description": "Une bibliothèque de terrains réalistes modélisés dans Blender spécifiquement pour leur marque, remplaçant toutes les images génériques du site."
+                    },
+                    {
+                        "label": "Étape suivante",
+                        "title": "Le configurateur",
+                        "description": "Un configurateur 3D interactif de terrains de padel développé avec Three.js, sans inscription, permettant aux visiteurs d’ajuster le revêtement, la structure et les finitions et de voir instantanément le résultat."
+                    },
+                    {
+                        "label": "Étape suivante",
+                        "title": "Refonte complète",
+                        "description": "Une nouvelle mise en page et une nouvelle conception des interactions sur l’ensemble du site, pensées pour lui donner une apparence actuelle plutôt que générique."
+                    },
+                    {
+                        "label": "Toujours en cours",
+                        "title": "Une expérience cohérente sur ordinateur et mobile",
+                        "description": "Chaque section, y compris le configurateur, a été reconstruite pour offrir de bonnes performances et une expérience adaptée au mobile, plutôt que de simplement réduire la version desktop."
+                    }
+                ],
+                "techGroups": [
+                    {
+                        "category": "3D & Configurateur",
+                        "items": [
+                            "Scène Three.js et logique d’interaction",
+                            "Modèles de terrains personnalisés réalisés dans Blender",
+                            "Configurateur léger côté client, sans inscription"
+                        ]
+                    },
+                    {
+                        "category": "Site & CMS",
+                        "items": [
+                            "WordPress + Elementor",
+                            "JavaScript personnalisé pour les sections interactives",
+                            "Refonte responsive pour ordinateur et mobile"
+                        ]
+                    }
+                ],
+                "features": [
+                    {
+                        "title": "Configurateur 3D de terrain",
+                        "description": "Un outil interactif sans inscription permettant de personnaliser en temps réel le revêtement, la structure et les finitions d’un terrain de padel."
+                    },
+                    {
+                        "title": "Maquettes 3D originales",
+                        "description": "Un ensemble complet de rendus réalistes de terrains modélisés dans Blender sous le nom d’Infinite Padel, remplaçant les images génériques."
+                    },
+                    {
+                        "title": "Refonte visuelle complète",
+                        "description": "Une nouvelle mise en page et une nouvelle conception des interactions sur l’ensemble du site afin de refléter la qualité réelle du travail de l’entreprise."
+                    },
+                    {
+                        "title": "Interactivité pensée pour le mobile",
+                        "description": "Le configurateur et toutes les sections interactives ont été reconstruits pour fonctionner parfaitement sur mobile, et pas uniquement sur ordinateur."
+                    }
+                ],
+                "screenshots": [
+                    {
+                        "caption": "Le configurateur 3D de terrain en utilisation"
+                    },
+                    {
+                        "caption": "Une maquette de terrain rendue dans Blender"
+                    },
+                    {
+                        "caption": "La page d’accueil entièrement repensée"
+                    },
+                    {
+                        "caption": "Version mobile du configurateur"
+                    }
+                ],
+                "status": {
+                    "label": "Où en est le projet aujourd’hui",
+                    "items": [
+                        "En production sur infinitepadelcourts.com",
+                        "Configurateur utilisé directement par les clients potentiels lors de leur évaluation, sans création de compte"
+                    ]
+                },
                 "links": {
                     "live": "https://infinitepadelcourts.com"
                 }
             },
             {
                 "name": "SimoLimo",
-                "text": "Site de réservation de limousines de luxe et de voitures haut de gamme pour une entreprise de transport basée à Denver.",
+                "slug": "simolimo",
+                "tagline": "Une expérience de réservation haut de gamme pour une entreprise de limousine de Denver, conçue pour un propriétaire indépendant.",
+                "text": "Site de réservation de limousines de luxe et de véhicules haut de gamme pour une entreprise de transport basée à Denver.",
+                "studyText": "SimoLimo a été conçu pour une personne qui gère seule son activité de transport haut de gamme et qui avait besoin d’un site capable de remplacer une véritable équipe commerciale : il devait être aussi premium que les véhicules eux-mêmes, rendre la réservation simple pour les clients et offrir un moyen direct et facile de contacter le propriétaire, sans toute la complexité liée à la gestion d’une plateforme plus importante.",
+                "challenge": "Dans le secteur du transport de luxe, le site web est souvent la première et parfois la seule impression qu’un client a avant de réserver un véhicule pouvant coûter plusieurs dizaines de milliers d’euros. Le site devait transmettre une sensation haut de gamme sans paraître froid ou trop corporate, puisque l’entreprise est gérée par une seule personne et non par une grande flotte. La réservation et le contact devaient également être extrêmement simples pour des clients qui réservent souvent à la dernière minute, depuis leur téléphone, pour un trajet vers l’aéroport ou un événement.",
+                "solution": "J’ai conçu le site autour d’une identité visuelle sobre et premium, avec des tons sombres, des photographies fortes et des espaces généreux, afin de transmettre une sensation de luxe sans avoir recours à une décoration excessive. J’ai intégré un parcours de réservation en ligne simple ainsi que des options de contact directes, permettant à un client de réserver en quelques étapes ou de contacter directement le propriétaire selon la situation.",
                 "stack": [
                     "WordPress",
                     "Elementor",
@@ -189,26 +340,176 @@
                     "JavaScript",
                     "CSS3"
                 ],
+                "journey": [
+                    {
+                        "label": "Point de départ",
+                        "title": "Un propriétaire, un site",
+                        "description": "Une entreprise de transport de luxe gérée par une seule personne qui avait besoin d’un site capable d’effectuer le travail d’une équipe commerciale."
+                    },
+                    {
+                        "label": "Première étape",
+                        "title": "Une identité visuelle luxueuse",
+                        "description": "Un style sombre et premium accompagné de photographies fortes, conçu pour refléter le niveau des véhicules proposés."
+                    },
+                    {
+                        "label": "Étape suivante",
+                        "title": "Une réservation en ligne simple",
+                        "description": "Un parcours de réservation fluide développé avec Fluent Forms, pensé pour être rempli rapidement, notamment depuis un téléphone."
+                    },
+                    {
+                        "label": "Toujours en cours",
+                        "title": "Un contact direct et simple",
+                        "description": "Des moyens clairs et toujours visibles pour contacter directement le propriétaire, pour les clients qui préfèrent échanger plutôt que remplir un formulaire."
+                    }
+                ],
+                "techGroups": [
+                    {
+                        "category": "Site & Réservation",
+                        "items": [
+                            "WordPress + Elementor",
+                            "Fluent Forms pour les réservations et les demandes de contact en ligne",
+                            "JavaScript et CSS personnalisés pour le style visuel haut de gamme"
+                        ]
+                    }
+                ],
+                "features": [
+                    {
+                        "title": "Réservation en ligne",
+                        "description": "Un parcours de réservation simple et rapide permettant aux clients de réserver directement un véhicule depuis le site."
+                    },
+                    {
+                        "title": "Options de contact direct",
+                        "description": "Des moyens clairs de contacter directement le propriétaire, conçus pour les clients qui préfèrent réserver par téléphone ou par message."
+                    },
+                    {
+                        "title": "Design visuel luxueux",
+                        "description": "Une esthétique sombre et premium basée sur des photographies fortes, correspondant à la qualité de la flotte."
+                    }
+                ],
+                "screenshots": [
+                    {
+                        "caption": "Le hero de la page d’accueil"
+                    },
+                    {
+                        "caption": "Le parcours de réservation en ligne"
+                    },
+                    {
+                        "caption": "La présentation de la flotte"
+                    }
+                ],
+                "status": {
+                    "label": "Où en est le projet aujourd’hui",
+                    "items": [
+                        "En production sur simolimo.net",
+                        "Utilisé directement par le propriétaire pour gérer les réservations et les demandes des clients"
+                    ]
+                },
                 "links": {
                     "live": "https://simolimo.net"
                 }
             },
             {
                 "name": "Infinite Sport",
-                "text": "Site moderne et responsive pour une entreprise de création d’espaces de sport et bien-être.",
+                "slug": "sport",
+                "tagline": "Une vitrine dynamique et motivante pour une entreprise qui construit des espaces MMA, des salles de sport et des terrains de stade.",
+                "text": "Un site web moderne et responsive avec une boutique en ligne intégrée pour une entreprise spécialisée dans la construction de salles de sport et d’espaces de bien-être.",
+                "studyText": "Infinite Sport construit des infrastructures sportives physiques — rings de MMA et de boxe, terrains de padel, terrains de football, installations extérieures et infrastructures de stade — et avait besoin d’un site avec la même énergie que ses réalisations. Au-delà du site vitrine, l’entreprise avait besoin d’une boutique WooCommerce fonctionnelle pour des produits qui ne sont pas toujours standardisés : certains articles devaient pouvoir être personnalisés par le client avant l’achat, avec également une intégration CRM pour capturer et suivre réellement les prospects.",
+                "challenge": "Une entreprise de construction et d’équipement qui vend dans plusieurs catégories sportives très différentes risque de paraître générique si le site traite chaque produit de la même manière. Le site devait être motivant et énergique plutôt que corporate, tout en fonctionnant comme une véritable boutique e-commerce. Certains produits ne pouvaient pas simplement être vendus tels quels : les clients devaient pouvoir les configurer avant de passer commande, ce que WooCommerce ne permet pas nativement. Les prospects provenant du site devaient également être automatiquement transmis au CRM au lieu de se perdre dans une boîte de réception.",
+                "solution": "J’ai conçu le site avec des éléments interactifs et dynamiques pour refléter la marque dans toutes ses catégories sportives, puis j’ai intégré WooCommerce pour la boutique. Pour les produits nécessitant une configuration, j’ai développé du code personnalisé au-dessus de WooCommerce afin que les clients puissent personnaliser ces articles selon leurs besoins avant de les ajouter au panier. J’ai également mis en place l’intégration CRM, notamment avec un suivi basé sur les cookies, afin que les prospects et les commandes provenant du site soient directement transmis au pipeline commercial sans nécessiter de suivi manuel.",
                 "stack": [
                     "WordPress",
+                    "WooCommerce",
                     "Elementor",
                     "CSS3",
                     "PHP"
                 ],
+                "journey": [
+                    {
+                        "label": "Point de départ",
+                        "title": "Plusieurs sports, une seule identité",
+                        "description": "Une entreprise active dans le MMA, la boxe, le padel, le football et la construction de stades qui avait besoin d’un site avec une véritable énergie."
+                    },
+                    {
+                        "label": "Première étape",
+                        "title": "Un design interactif et motivant",
+                        "description": "Des mises en page et des éléments interactifs conçus pour refléter l’intensité des sports pour lesquels l’entreprise construit des infrastructures."
+                    },
+                    {
+                        "label": "Étape suivante",
+                        "title": "La boutique WooCommerce",
+                        "description": "Une boutique en ligne complète intégrée au site pour leurs produits et équipements commercialisables."
+                    },
+                    {
+                        "label": "Étape suivante",
+                        "title": "La personnalisation des produits",
+                        "description": "Du PHP personnalisé développé au-dessus de WooCommerce afin que les clients puissent configurer certains produits selon leurs préférences avant de passer commande, une fonctionnalité que WooCommerce ne prend pas en charge nativement."
+                    },
+                    {
+                        "label": "Toujours en cours",
+                        "title": "Des prospects connectés au CRM",
+                        "description": "Une intégration CRM avec suivi basé sur les cookies afin que les prospects et les commandes provenant du site soient directement transmis au pipeline commercial."
+                    }
+                ],
+                "techGroups": [
+                    {
+                        "category": "Boutique & E-commerce",
+                        "items": [
+                            "WooCommerce",
+                            "PHP personnalisé pour la personnalisation des produits",
+                            "WordPress + Elementor"
+                        ]
+                    },
+                    {
+                        "category": "Ventes & Suivi",
+                        "items": [
+                            "Intégration CRM pour la capture des prospects",
+                            "Suivi des visiteurs basé sur les cookies"
+                        ]
+                    }
+                ],
+                "features": [
+                    {
+                        "title": "Boutique en ligne intégrée",
+                        "description": "Une boutique WooCommerce complète pour les équipements et produits commercialisés par l’entreprise."
+                    },
+                    {
+                        "title": "Produits personnalisables",
+                        "description": "Un système de configuration personnalisé pour certains produits, permettant aux clients d’adapter les articles à leurs besoins avant l’achat."
+                    },
+                    {
+                        "title": "Prospects connectés au CRM",
+                        "description": "Un suivi basé sur les cookies et une intégration CRM permettant aux prospects et aux commandes d’être directement transmis au pipeline commercial."
+                    },
+                    {
+                        "title": "Design interactif et dynamique",
+                        "description": "Une mise en page et des éléments interactifs conçus pour transmettre une énergie motivante à travers toutes les catégories sportives de l’entreprise."
+                    }
+                ],
+                "screenshots": [
+                    {
+                        "caption": "La page d’accueil avec ses éléments interactifs"
+                    },
+                    {
+                        "caption": "Une page produit personnalisable"
+                    },
+                    {
+                        "caption": "La boutique WooCommerce"
+                    }
+                ],
+                "status": {
+                    "label": "Où en est le projet aujourd’hui",
+                    "items": [
+                        "En production sur infinitesport.pro",
+                        "La boutique et le pipeline CRM sont activement utilisés pour traiter les commandes et les prospects"
+                    ]
+                },
                 "links": {
                     "live": "https://infinitesport.pro"
                 }
             },
             {
                 "name": "CineZen",
-                "text": "Découvrez et suivez vos films et séries préférés grâce à l’intégration de l’API TMDb.",
+                "text": "Découvrez et suivez vos films et séries TV préférés grâce à l’intégration de l’API TMDb.",
                 "stack": [
                     "React",
                     "JavaScript",
@@ -221,8 +522,8 @@
                 }
             },
             {
-                "name": "Jeu de mémoire",
-                "text": "Jeu de cartes mémoire responsive avec des personnages d’anime. Amusant pour tous les âges !",
+                "name": "Memory Cards Game",
+                "text": "Un jeu de mémoire responsive mettant en scène des personnages d’anime. Idéal pour tous les âges !",
                 "stack": [
                     "React",
                     "JavaScript",
@@ -238,19 +539,19 @@
     },
     "contact": {
         "title": "﴾ Contact ﴿",
-        "headline": "Construisons ensemble quelque chose de grand",
-        "description": "Vous avez une idée à concrétiser ? Je suis toujours partant pour des collaborations passionnantes, des défis créatifs ou simplement discuter.\nRemplissez le formulaire ou contactez-moi directement, je vous répondrai dès que possible.",
+        "headline": "Construisons quelque chose de formidable ensemble",
+        "description": "Vous avez une idée que vous aimeriez concrétiser ? Je suis toujours ouvert aux collaborations passionnantes, aux défis créatifs ou simplement à une bonne conversation.\nRemplissez le formulaire ou contactez-moi directement, et je vous répondrai dès que possible.",
         "stayInTouch": "Restons en contact",
         "email": "wadiezaanoune@gmail.com",
         "thankYouTitle": "Merci !",
-        "thankYouMessage": "Votre message a été envoyé avec succès.",
+        "thankYouMessage": "Votre message a bien été envoyé.",
         "form": {
             "nameLabel": "Nom",
             "namePlaceholder": "Votre nom",
-            "emailLabel": "Email",
-            "emailPlaceholder": "Votre email",
+            "emailLabel": "E-mail",
+            "emailPlaceholder": "Votre e-mail",
             "messageLabel": "Message",
-            "messagePlaceholder": "Parlez-moi de votre idée...",
+            "messagePlaceholder": "Partagez votre idée...",
             "submit": "Envoyer le message"
         }
     }
