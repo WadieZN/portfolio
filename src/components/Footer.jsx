@@ -4,6 +4,7 @@ import animationData from "../assets/Walking_Nomads.json";
 import { useTranslation } from "react-i18next";
 import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import FooterWaves from "./FooterWaves";
 
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -51,12 +52,15 @@ function Footer() {
 
   return (
     <>
-      <div className="footer-nomads">
-        <div
-          className="nomads_image desktop"
-          ref={container}
-          style={{ width: "100%" }}
-        />
+      <div className="footer-scenery">
+        <FooterWaves />
+        <div className="footer-nomads">
+          <div
+            className="nomads_image desktop"
+            ref={container}
+            style={{ width: "100%" }}
+          />
+        </div>
       </div>
 
       <footer>

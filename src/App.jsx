@@ -11,6 +11,7 @@ import Contact from "./components/Contact";
 import Career from "./components/Career";
 import { useGoogleAnalytics } from "./analytics";
 import SmoothScroll from "./components/SmoothScroll";
+import PageLoader from "./components/PageLoader";
 
 function App() {
   useGoogleAnalytics();
@@ -42,52 +43,56 @@ function App() {
   };
 
   return (
-    <SmoothScroll>
-      <button className="mode-toggle" onClick={handleToggle}>
-        <div>
-          <img
-            src={currentIcon}
-            alt={currentAlt}
-            className={isHiding ? "hide" : ""}
-          />
-        </div>
-      </button>
+    <>
+      <PageLoader isDarkMode={isDarkMode} />
 
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <Hero />
+      <SmoothScroll>
+        <button className="mode-toggle" onClick={handleToggle}>
+          <div>
+            <img
+              src={currentIcon}
+              alt={currentAlt}
+              className={isHiding ? "hide" : ""}
+            />
+          </div>
+        </button>
+
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Hero />
+                <main>
+                  <div
+                    style={{
+                      background: "var(--bg-color)",
+                    }}
+                  >
+                    <About />
+                    <Career />
+                  </div>
+                  <div style={{ background: "var(--sky)" }}>
+                    <Projects isDarkMode={isDarkMode} />
+                    <Contact />
+                    <Footer />
+                  </div>
+                </main>
+              </>
+            }
+          />
+          <Route
+            path="/projects/:slug"
+            element={
               <main>
-                <div
-                  style={{
-                    background: "var(--bg-color)",
-                  }}
-                >
-                  <About />
-                  <Career />
-                </div>
-                <div style={{ background: "var(--sky)" }}>
-                  <Projects isDarkMode={isDarkMode} />
-                  <Contact />
-                  <Footer />
-                </div>
+                <ProjectCaseStudy />
+                <Footer />
               </main>
-            </>
-          }
-        />
-        <Route
-          path="/projects/:slug"
-          element={
-            <main>
-              <ProjectCaseStudy />
-              <Footer />
-            </main>
-          }
-        />
-      </Routes>
-    </SmoothScroll>
+            }
+          />
+        </Routes>
+      </SmoothScroll>
+    </>
   );
 }
 

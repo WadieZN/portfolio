@@ -59,7 +59,7 @@
     --dark-invert: invert(100%);
     --nomads-invert: invert(39%) sepia(12%) saturate(2158%) hue-rotate(165deg) brightness(92%) contrast(86%);
 
-    --sand: #c6aa73;
+    --sand: #b39a6a;
 
 }
 
@@ -117,6 +117,59 @@ button {
     cursor: pointer;
     background: none;
     border: none;
+}
+
+.page-loader {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    background: var(--bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-loader-icon {
+    position: relative;
+    z-index: 1;
+    width: 90px;
+    height: 90px;
+    will-change: transform;
+}
+
+.page-loader-glow {
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--secondary-color) 0%, transparent 70%);
+    opacity: 0.35;
+    animation: page-loader-pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes page-loader-pulse {
+
+    0%,
+    100% {
+        transform: scale(0.9);
+        opacity: 0.25;
+    }
+
+    50% {
+        transform: scale(1.15);
+        opacity: 0.45;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .page-loader-icon {
+        animation: none !important;
+    }
+
+    .page-loader-glow {
+        animation: none;
+        opacity: 0.3;
+    }
 }
 
 // Components
@@ -1076,7 +1129,7 @@ button {
 
 .contact-grid {
     @include flex-center();
-    margin: 50px auto;
+    margin: 50px auto 25px auto;
     max-width: 100%;
     width: 100%;
 }
@@ -1205,7 +1258,7 @@ form {
 
     div {
         @include flex-center();
-        margin: 15px 0;
+        margin: 15px 0 0 0;
         overflow: hidden;
     }
 
@@ -1296,7 +1349,14 @@ footer {
     }
 }
 
+.footer-scenery {
+    width: 100%;
+    position: relative;
+}
+
 .footer-nomads {
+    position: relative;
+    z-index: 4;
     overflow: hidden;
     height: 200px;
     filter: var(--nomads-invert);
@@ -1341,6 +1401,82 @@ footer {
     object-position: bottom;
 }
 
+.footer-waves {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.footer-wave-track {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    width: 200%;
+    height: 100%;
+    will-change: transform;
+}
+
+.footer-wave-svg {
+    width: 50%; // each of the two copies takes exactly half the 200% track
+    height: 100%;
+    display: block;
+    flex-shrink: 0;
+}
+
+.footer-wave-back {
+    z-index: 1;
+    animation: footer-wave-drift 60s linear infinite;
+
+    .footer-wave-svg path {
+        fill: var(--sand);
+        opacity: 0.4;
+    }
+}
+
+.footer-wave-middle {
+    z-index: 2;
+    animation: footer-wave-drift-reverse 35s linear infinite;
+
+    .footer-wave-svg path {
+        fill: var(--bg-color);
+        opacity: .75;
+    }
+}
+
+.footer-wave-front {
+    z-index: 3;
+    animation: footer-wave-drift 20s linear infinite;
+
+    .footer-wave-svg path {
+        fill: var(--back-wave); // matches footer's own background — blends seamlessly at the bottom
+    }
+}
+
+@keyframes footer-wave-drift {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes footer-wave-drift-reverse {
+    0% {
+        transform: translateX(-50%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
 footer .lang-toggle {
     margin-left: 1rem;
     background: none;
@@ -1356,11 +1492,11 @@ footer .lang-toggle {
 
 @keyframes scroll-left {
     0% {
-        transform: translateX(0);
+        transform: translate3d(0, 0, 0);
     }
 
     100% {
-        transform: translateX(-50.4%);
+        transform: translate3d(calc(-1 * var(--marquee-distance, 0px)), 0, 0);
     }
 }
 
@@ -1477,6 +1613,8 @@ footer .lang-toggle {
         padding: 12px;
 
         .scroll-track {
+            font-size: .9rem !important;
+            margin: 0 1.4rem !important;
             animation: scroll-left 10s linear infinite;
         }
 
@@ -1504,6 +1642,7 @@ footer .lang-toggle {
                     margin-bottom: 10px;
                 }
 
+
             }
 
             .about-img {
@@ -1519,16 +1658,21 @@ footer .lang-toggle {
 
     .career-description {
         flex-direction: column-reverse;
-        margin-top: 80px;
+
+        .nomad-knight {
+            max-width: 400px;
+            margin: 0;
+        }
 
         div {
             max-width: 600px;
             margin: 50px 0 0 0;
 
             p {
+                margin-bottom: 25px;
                 text-align: center;
                 line-height: 2rem;
-                font-size: 1.2rem;
+                font-size: 1.1rem;
             }
 
             img {
@@ -1570,8 +1714,10 @@ footer .lang-toggle {
             }
 
             p {
-                font-size: 1rem;
-                line-height: 1.9rem;
+                font-size: 0.9rem;
+                line-height: 1.8rem;
+                text-align: center;
+                padding: 0 10px;
             }
         }
     }
@@ -1592,8 +1738,8 @@ footer .lang-toggle {
     }
 
     .career-description div p {
-        font-size: 1.1rem;
-        line-height: 1.9rem;
+        font-size: 0.9rem;
+        line-height: 1.8rem;
     }
 
 

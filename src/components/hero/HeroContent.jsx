@@ -1,10 +1,5 @@
 import React, { useRef, useEffect, forwardRef } from "react";
 import arrow from "../../assets/img/arrow-down.png";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 const HeroContent = forwardRef(function HeroContent({ items }, ref) {
   const trackRef = useRef(null);
@@ -14,7 +9,6 @@ const HeroContent = forwardRef(function HeroContent({ items }, ref) {
     const track = trackRef.current;
     const container = containerRef.current;
 
-    // fill scroll text
     const populateTrack = () => {
       track.innerHTML = "";
       items.forEach((text) => {
@@ -27,33 +21,61 @@ const HeroContent = forwardRef(function HeroContent({ items }, ref) {
 
     const cloneUntilOverflow = () => {
       const containerWidth = container.offsetWidth;
-      while (track.scrollWidth < containerWidth * 2) {
-        const clones = [...track.children].map((el) => el.cloneNode(true));
-        clones.forEach((clone) => track.appendChild(clone));
+      // Remove any existing clones first
+      const originalItems = [...track.children];
+      const itemCount = originalItems.length;
+
+      // Clear and repopulate with only original items
+      track.innerHTML = "";
+      originalItems.forEach((el) => track.appendChild(el));
+
+      // Clone until we have enough content for seamless loop
+      // Use Math.max to ensure we have at least 2x container width
+      const targetWidth = Math.max(containerWidth * 2, 1000);
+      let cloneCount = 0;
+      const maxClones = 20; // Safety limit
+
+      while (track.scrollWidth < targetWidth && cloneCount < maxClones) {
+        const currentItems = [...track.children];
+        currentItems.forEach((el) => {
+          const clone = el.cloneNode(true);
+          track.appendChild(clone);
+        });
+        cloneCount++;
+
+        // Break if we're not adding more content (infinite loop protection)
+        if (track.scrollWidth === 0) break;
       }
+    };
+
+    const setLoopDistance = () => {
+      // Get the width of a single set of items
+      const singleSetWidth =
+        track.scrollWidth /
+        Math.max(1, Math.floor(track.children.length / items.length));
+      track.style.setProperty("--marquee-distance", `${singleSetWidth}px`);
     };
 
     populateTrack();
     cloneUntilOverflow();
+    setLoopDistance();
 
-    // horizontal infinite animation
-    gsap.to(track, {
-      xPercent: -50,
-      ease: "none",
-      repeat: -1,
-      duration: 20,
-    });
-
-    let lastWidth = window.innerWidth;
+    let resizeTimeout;
     const handleResize = () => {
-      if (window.innerWidth === lastWidth) return;
-      lastWidth = window.innerWidth;
-      populateTrack();
-      cloneUntilOverflow();
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        populateTrack();
+        cloneUntilOverflow();
+        setLoopDistance();
+      }, 250); // Debounce resize events
     };
+
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, [items]);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      clearTimeout(resizeTimeout);
+    };
+  }, [items.join("|")]);
 
   return (
     <div className="hero-content" ref={ref}>

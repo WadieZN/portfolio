@@ -4,6 +4,10 @@ import { useEffect, useRef } from "react";
 import ProjectLinks from "./ProjectLinks";
 import { useProjects } from "./useProjects";
 import React from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 function ProjectCaseStudy() {
   const { slug } = useParams();
@@ -13,8 +17,35 @@ function ProjectCaseStudy() {
   const rootRef = useRef(null);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    // Reset scroll position with multiple methods for compatibility
+    const resetScroll = () => {
+      // Method 1: Standard scroll
+      window.scrollTo(0, 0);
+
+      // Method 2: For smooth scroll libraries
+      if (typeof window.smoother !== "undefined") {
+        window.smoother.scrollTop(0);
+      }
+
+      // Method 3: GSAP ScrollTrigger
+      ScrollTrigger.refresh();
+
+      // Method 4: Force scroll after a small delay
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        if (typeof window.smoother !== "undefined") {
+          window.smoother.scrollTop(0);
+        }
+      }, 100);
+    };
+
+    resetScroll();
+
+    // Also reset when the route changes
+    return () => {
+      ScrollTrigger.refresh();
+    };
+  }, [slug]);
 
   useEffect(() => {
     if (!rootRef.current) return;

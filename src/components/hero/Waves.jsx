@@ -4,19 +4,18 @@ import { useTranslation } from "react-i18next";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import { loadSlim } from "@tsparticles/slim";
-
 gsap.registerPlugin(ScrollTrigger);
 
 function Waves() {
-  const { t } = useTranslation();
-  const items = t("hero.roles", { returnObjects: true });
+  const { t, i18n } = useTranslation();
+  const items = useMemo(
+    () => t("hero.roles", { returnObjects: true }),
+    [i18n.language],
+  );
 
   const backWaveRef = useRef(null);
   const middleWaveRef = useRef(null);
   const heroContentRef = useRef(null);
-
-
 
   useEffect(() => {
     gsap.to(backWaveRef.current, {
@@ -73,7 +72,6 @@ function Waves() {
           <path d="M0 441L30 451.5C60 462 120 483 180 484.2C240 485.3 300 466.7 360 462.8C420 459 480 470 540 484.8C600 499.7 660 518.3 720 517.7C780 517 840 497 870 487L900 477L900 601L0 601Z" />
         </svg>
       </div>
-
 
       <div className="front-wave">
         <svg
