@@ -6,30 +6,27 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollSmoother, ScrollTrigger);
 
 export default function SmoothScroll({ children }) {
-  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+  useEffect(() => {
+    const isTouch = matchMedia("(hover: none) and (pointer: coarse)").matches;
 
-  if (!isIOS) {
-    useEffect(() => {
-      const smoother = ScrollSmoother.create({
-        wrapper: "#smooth-wrapper",
-        content: "#smooth-content",
-        smooth: 2,
-        effects: true,
-        normalizeScroll: true,
-        ignoreMobileResize: true,
-        smoothTouch: 1,
-      });
+    const smoother = ScrollSmoother.create({
+      wrapper: "#smooth-wrapper",
+      content: "#smooth-content",
+      smooth: isTouch ? 0 : 2,
+      effects: true,
+      normalizeScroll: !isTouch,
+      smoothTouch: false,
+    });
 
-      window.smoother = smoother;
+    window.smoother = smoother;
 
-      return () => {
-        if (window.smoother) {
-          window.smoother.kill();
-          delete window.smoother;
-        }
-      };
-    }, []);
-  }
+    return () => {
+      if (window.smoother) {
+        window.smoother.kill();
+        delete window.smoother;
+      }
+    };
+  }, []);
 
   return (
     <div id="smooth-wrapper">

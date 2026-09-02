@@ -44,11 +44,13 @@ const HeroContent = forwardRef(function HeroContent({ items }, ref) {
       duration: 20,
     });
 
+    let lastWidth = window.innerWidth;
     const handleResize = () => {
+      if (window.innerWidth === lastWidth) return;
+      lastWidth = window.innerWidth;
       populateTrack();
       cloneUntilOverflow();
     };
-
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, [items]);
@@ -66,8 +68,8 @@ const HeroContent = forwardRef(function HeroContent({ items }, ref) {
           e.preventDefault();
           if (typeof window.smoother !== "undefined") {
             window.smoother.scrollTo("#about", true, "center center", {
-              duration: 5, 
-              ease: "expo.inOut", 
+              duration: 5,
+              ease: "expo.inOut",
             });
           } else {
             document.querySelector("#about").scrollIntoView({
