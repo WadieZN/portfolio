@@ -21,38 +21,48 @@ const HeroContent = forwardRef(function HeroContent({ items }, ref) {
 
     const cloneUntilOverflow = () => {
       const containerWidth = container.offsetWidth;
-      // Remove any existing clones first
-      const originalItems = [...track.children];
-      const itemCount = originalItems.length;
 
-      // Clear and repopulate with only original items
+      // Get original items
+      const originalItems = [...track.children];
+      const originalSetWidth = originalItems.reduce(
+        (total, el) => total + el.offsetWidth,
+        0,
+      );
+
+      // Clear track
       track.innerHTML = "";
+
+      // Add original items back
       originalItems.forEach((el) => track.appendChild(el));
 
-      // Clone until we have enough content for seamless loop
-      // Use Math.max to ensure we have at least 2x container width
-      const targetWidth = Math.max(containerWidth * 2, 1000);
-      let cloneCount = 0;
-      const maxClones = 20; // Safety limit
+      // Calculate how many complete sets we need
+      // We need at least 2 complete sets, but ensure the total width
+      // is at least 2x container width for smooth looping
+      const minSetsNeeded = Math.ceil((containerWidth * 2) / originalSetWidth);
+      const totalSets = Math.max(2, minSetsNeeded * 2); // Always use an even number
 
-      while (track.scrollWidth < targetWidth && cloneCount < maxClones) {
-        const currentItems = [...track.children];
-        currentItems.forEach((el) => {
+      // Clone the original items to create totalSets number of sets
+      for (let setIndex = 1; setIndex < totalSets; setIndex++) {
+        originalItems.forEach((el) => {
           const clone = el.cloneNode(true);
           track.appendChild(clone);
         });
-        cloneCount++;
-
-        // Break if we're not adding more content (infinite loop protection)
-        if (track.scrollWidth === 0) break;
       }
+
+      console.log(
+        `Created ${totalSets} sets for container width ${containerWidth}px`,
+      );
     };
 
     const setLoopDistance = () => {
-      // Get the width of a single set of items
-      const singleSetWidth =
-        track.scrollWidth /
-        Math.max(1, Math.floor(track.children.length / items.length));
+      // Calculate width of a single set (one complete iteration of items)
+      const itemsPerSet = items.length;
+      const totalChildren = track.children.length;
+      const numberOfSets = totalChildren / itemsPerSet;
+
+      // Get the width of one complete set
+      const singleSetWidth = track.scrollWidth / numberOfSets;
+
       track.style.setProperty("--marquee-distance", `${singleSetWidth}px`);
     };
 

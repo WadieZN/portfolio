@@ -200,13 +200,13 @@
                         "caption": "Le calendrier interactif du planificateur de flotte"
                     },
                     {
-                        "caption": "Le scanner de carte d’identité, avec capture caméra et guide de cadrage"
-                    },
-                    {
-                        "caption": "La carte GPS en temps réel montrant un véhicule en déplacement"
+                        "caption": "Suivi et historique des dommages du véhicule"
                     },
                     {
                         "caption": "Le tableau de bord du propriétaire avec son système de widgets"
+                    },
+                    {
+                        "caption": "La carte GPS en temps réel montrant un véhicule en déplacement"
                     },
                     {
                         "caption": "Un contrat finalisé dans la mise en page d’impression V4"
@@ -306,13 +306,10 @@
                         "caption": "Le configurateur 3D de terrain en utilisation"
                     },
                     {
-                        "caption": "Une maquette de terrain rendue dans Blender"
-                    },
-                    {
                         "caption": "La page d’accueil entièrement repensée"
                     },
                     {
-                        "caption": "Version mobile du configurateur"
+                        "caption": "Une maquette de terrain rendue dans Blender"
                     }
                 ],
                 "status": {
@@ -328,7 +325,7 @@
             },
             {
                 "name": "SimoLimo",
-                "slug": "simolimo",
+                "slug": "simoLimo",
                 "tagline": "Une expérience de réservation haut de gamme pour une entreprise de limousine de Denver, conçue pour un propriétaire indépendant.",
                 "text": "Site de réservation de limousines de luxe et de véhicules haut de gamme pour une entreprise de transport basée à Denver.",
                 "studyText": "SimoLimo a été conçu pour une personne qui gère seule son activité de transport haut de gamme et qui avait besoin d’un site capable de remplacer une véritable équipe commerciale : il devait être aussi premium que les véhicules eux-mêmes, rendre la réservation simple pour les clients et offrir un moyen direct et facile de contacter le propriétaire, sans toute la complexité liée à la gestion d’une plateforme plus importante.",
@@ -390,9 +387,6 @@
                 "screenshots": [
                     {
                         "caption": "Le hero de la page d’accueil"
-                    },
-                    {
-                        "caption": "Le parcours de réservation en ligne"
                     },
                     {
                         "caption": "La présentation de la flotte"
@@ -492,9 +486,6 @@
                     },
                     {
                         "caption": "Une page produit personnalisable"
-                    },
-                    {
-                        "caption": "La boutique WooCommerce"
                     }
                 ],
                 "status": {

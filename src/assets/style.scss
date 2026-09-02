@@ -271,10 +271,11 @@ button {
         margin: 15px 0;
 
         .scroll-track {
-            display: inline-block;
+            display: inline-flex; // Changed from inline-block to inline-flex
             white-space: nowrap;
             will-change: transform;
             animation: scroll-left 20s linear infinite;
+            gap: 0; // Remove any gaps between items
         }
 
         .scroll-item {
@@ -284,6 +285,7 @@ button {
             letter-spacing: 2px;
             font-weight: 600;
             color: var(--text-color);
+            flex-shrink: 0; // Prevent items from shrinking
         }
     }
 
@@ -1401,6 +1403,16 @@ footer {
     object-position: bottom;
 }
 
+@media screen and (max-width: 1400px) {
+
+    .nomads_image canvas,
+    .nomads_image svg {
+        bottom: -50px;
+
+    }
+}
+
+
 .footer-waves {
     position: absolute;
     bottom: 0;
@@ -1620,7 +1632,7 @@ footer .lang-toggle {
 
         .scroll-item {
             font-size: .9rem !important;
-            margin: 0 1.4rem !important;
+            margin: 0 1rem !important;
         }
     }
 
@@ -1692,6 +1704,15 @@ footer .lang-toggle {
 
     form {
         margin-bottom: 50px;
+    }
+}
+
+
+@media screen and (max-width: 510px) {
+    .infinite-scroll {
+        .scroll-item {
+            margin: 0 0.75rem !important;
+        }
     }
 }
 

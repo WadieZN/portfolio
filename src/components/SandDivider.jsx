@@ -4,17 +4,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-/**
- * Sand-dune transition, sitting between Career and Projects.
- *
- * Mirrors Hero's Waves.jsx technique (3 SVG layers pushed by GSAP
- * ScrollTrigger scrub) but reversed: Hero's back/middle layers get
- * pushed DOWN as you scroll past it; these dune layers get pulled UP
- * instead, since the divider is being scrolled *past* rather than
- * scrolled *away from* at the top of the page. Grains fall in a layer
- * sandwiched between the back/middle dunes and the front one, so they
- * visually vanish behind the nearest dune as they land.
- */
 function SandDivider() {
   const grains = useMemo(() => {
     return Array.from({ length: 22 }, (_, i) => ({
@@ -33,7 +22,7 @@ function SandDivider() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.to(backDuneRef.current, {
-        y: -60,
+        y: -75,
         ease: "none",
         scrollTrigger: {
           trigger: ".sand-divider",
@@ -44,7 +33,7 @@ function SandDivider() {
       });
 
       gsap.to(middleDuneRef.current, {
-        y: -35,
+        y: -40,
         ease: "none",
         scrollTrigger: {
           trigger: ".sand-divider",

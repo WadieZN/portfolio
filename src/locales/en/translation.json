@@ -200,13 +200,13 @@
                         "caption": "The interactive fleet planner calendar "
                     },
                     {
-                        "caption": "ID card scanner, camera capture with the guided crop overlay"
-                    },
-                    {
-                        "caption": "Live GPS map showing a vehicle in transit"
+                        "caption": "Car dammages tracker and history"
                     },
                     {
                         "caption": "The owner dashboard with its widget layout"
+                    },
+                    {
+                        "caption": "Live GPS map showing a vehicle in transit"
                     },
                     {
                         "caption": "A completed contract in the V4 print layout"
@@ -306,13 +306,10 @@
                         "caption": "The 3D court configurator in use"
                     },
                     {
-                        "caption": "A Blender-rendered court mockup"
-                    },
-                    {
                         "caption": "The redesigned homepage"
                     },
                     {
-                        "caption": "Mobile view of the configurator"
+                        "caption": "A Blender-rendered court mockup"
                     }
                 ],
                 "status": {
@@ -328,7 +325,7 @@
             },
             {
                 "name": "SimoLimo",
-                "slug": "simolimo",
+                "slug": "simoLimo",
                 "tagline": "A luxury booking experience for a Denver limousine company, built for an owner-operator.",
                 "text": "Luxury limousine and premium car booking website for a Denver-based transportation company.",
                 "studyText": "SimoLimo is built for an individual running his own luxury transportation business, someone who needed a site that could stand in for a full sales team: it had to look as premium as the cars themselves, make booking effortless for clients, and give him a direct, simple way to be contacted, without any of the overhead of managing a larger platform.",
@@ -390,9 +387,6 @@
                 "screenshots": [
                     {
                         "caption": "The homepage hero"
-                    },
-                    {
-                        "caption": "The online booking flow"
                     },
                     {
                         "caption": "The fleet showcase"
@@ -492,9 +486,6 @@
                     },
                     {
                         "caption": "A customizable product page"
-                    },
-                    {
-                        "caption": "The WooCommerce store"
                     }
                 ],
                 "status": {
